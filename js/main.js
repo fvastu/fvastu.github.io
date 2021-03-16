@@ -132,7 +132,6 @@ function changeActiveNavigationItemOnScroll(indexActiveElement)
     navigationItemsCollection[i].classList.remove("current-item");
   }
   navigationItemsCollection[indexActiveElement].classList.add("current-item");
-  console.log('Item now active =>',indexActiveElement);
 }
 
 function ShowDoneText()

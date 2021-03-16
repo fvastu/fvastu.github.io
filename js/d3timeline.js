@@ -25,8 +25,10 @@ function drawChart() {
   var dateOffset = 20;
   var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   var h = window.innerHeight || document.documentElement.clientHeigh || document.body.clientHeight;
-  let scaleValue = 1.1;
-  if (w < 500) scaleValue = 1.2; //problem in positioning on mobile
+  let scaleValue = 0.95;
+  if (w < 500) scaleValue = 1.3; //problem in positioning on mobile
+  if (w > 500 && w < 800) scaleValue = 1.2; //problem in positioning on medium screen
+  if (w > 800 && w < 1100) scaleValue = 1.1; //problem in positioning on medium screen
   var graphicsWidth = 300;
   const xPosition = timelineContainer.clientWidth / scaleValue ;
   const svg = d3.select("#js-timelineChart").append("svg").attr('id','Chart').attr("height", h * 0.80).attr("width", w);
@@ -236,29 +238,6 @@ function SetCardPositionIntoTheMiddle(card)
   else card.attr('style','position:absolute; top: 15%; left: 15%;');
 }
 
-function SetCardPosition(card, position)
-{
-    let cardContainerId = 'checkpoint';
-    Reset(cardContainerId);
-    let vh = $(window).height()/100;
-    let vw = $(window).width()/100;
-    var timelineContainer = document.getElementById('timelineContainer'); 
-    var timelineContainerPos = timelineContainer.getBoundingClientRect();
-    //The question is: Is possibile to display the entire card in the current viewHeight?
-    let cardPosition = (timelineContainerPos.top + parseFloat(position.y) - 15 * vh);
-    //45vh is the hardcoded value used in the css class
-    //if there is overflow (which means position is greater than the ViewPort)
-    if (cardPosition + 45*vh > 100*vh) 
-    {
-      //Apply a correction. 4 is a value "just to be sure", but could be also different
-      let correctionNeeded = ((100-45)*vh - cardPosition)*4;
-      cardPosition = cardPosition + correctionNeeded;
-    }
-  
-    else console.log('card will be display') ;
-    if (vw * 100 > 992) card.attr('style','position:absolute; top:' + cardPosition + 'px; left: 0;');
-    else card.attr('style','position:absolute; top:' + cardPosition + 'px; left: 20%;');
-  }
 
 function Reset(id)
 {
@@ -305,7 +284,7 @@ function CreateCard(cardValue,cardContainerId)
 {
   var cardContainer = d3.create('div');
   cardContainer.attr('id',cardContainerId).attr('class','card__container');
-  cardContainer.append('a').attr('id','js-close-card').attr('href','#').attr('class','close horizontal-center').html('X');
+  cardContainer.append('div').attr('id','js-close-card').attr('class','close horizontal-center').html('X');
   var academicHat = d3.create('img').attr('src','/assets/AcademicHat.svg').attr('class','education-illustration');
   var codingComputer = d3.create('img').attr('src','/assets/ComputerCoding.svg').attr('class','work-illustration');
   var card = d3.create('div').attr('class', 'card');
@@ -341,7 +320,6 @@ function AddListeners()
 {
     //Remove the card when click on the X
     $("#js-close-card").click(function(){
-        console.log('close triggered');  
         var close = $(".card__container");
         close.remove();    
     })
