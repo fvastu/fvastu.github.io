@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Francesco Vasturzo's Website</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hi! I am italian software engineer, with a strong interest for front-end both in Desktop that Web environment. Have a look! Start now!">
+    <meta name="robots" content="index, follow"> 
+    <meta property="og:title" content="Francesco Vasturzo"/>
+    <meta property="og:description" content="Hi! I am italian software engineer, with a strong interest for front-end both in Desktop that Web environment. Have a look! Start now!"/>
+    <meta property="og:url" content="http://fvastu.github.io/"/>
+    <meta property="og:type" content="website"/>
+    <link rel="canonical" href="https://fvastu.github.io/index.html" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/d3timeline.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/min/jquery.pagepiling.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>  
+    
+</head>
+<style>
+
+
+</style>
+<body class="dark-body">
+
+<!--#region ABOUT ME PAGE ------->
+<div class="row section vertical-center pp-scrollable fill-height padding-content" id="AboutMe" style="overflow-x: hidden;">
+  <div class="title-wrapper">
+    <h1 class="title green-background">About me</h1>
+  </div>
+  <div class="row h-100" style="padding-top: 100px;">
+      <div class="col-lg-6 col-sm-12 col-xs-12 h-100">
+        <div class="row h-50">
+          <div id="image-container">
+            <img class="round glow-border" src="/assets/me.jpg" alt="Francesco Vasturzo's picture">
+          </div>
+        </div>
+        <div id="description-container" class="row h-25">
+          <div id="js-description" >
+            <li class="personal-description">I am software engineer for <a href="https://www.leonardocompany.com/en/home">Leonardo</a> in Turin, Italy. </span> 
+            <li class="personal-description">I have a strong interest for front-end both in Desktop that Web environment.</li>
+            <li class="personal-description">In general, I have an overwhelming passion for innovative technologies.</li>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 col-xs-12 h-100">
+        <div class="row">
+          <div id="timelineContainer" style="width: 95%; position: relative;">
+            <div id="js-hand-cursor-wrapper" style="position:absolute; left: 10vw;">
+              <img class="hand-cursor" id="js-hand-cursor" src="/assets/HandCursor.svg"></img>
+            </div>
+            <div id="js-timelineChart" style="width: 100%;"></div>
+          </div>
+          <div id="js-background-text" style="width: 5%;">
+            <p><code class="vertical-text">B<br />A<br />C<br />K<br />G<br />R<br />O<br />U<br />N<br />D<br /></code></p>
+        </div>
+        </div>
+      </div> 
+    </div>
+</div>
+<!--#endregion END ABOUT ME PAGE -->
+
+
+ <script src="js/min/jquery.fittext.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <script src="/js/min/typed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="/js/d3timeline.js"></script>
+  <script src="js/min/jquery.reflection.min.js"></script>
+  <script src="js/min/jquery.cloud9carousel.min.js"></script>
+  <script src="js/min/jquery.pagepiling.min.js"></script>
+  <script src="js/main.js" defer></script>
+  <script> 
+
+const Pages = { Home: 0, About: 1, Skills: 2, Contacts: 3 }
+
+var showcase = $("#showcase"), title = $('#skill__title'), value = $('#skill__value')
+var handCursorMove = new gsap.timeline();
+
+$("#js-fit-text").fitText(1.5);
+
+StartPreloader();
+
+function StartPreloader()
+{
+  var path = document.querySelector('.preloader-container path');
+  var length = path.getTotalLength();
+  // Clear any previous transition
+  path.style.transition = path.style.WebkitTransition = 'none';
+  // Set up the starting positions
+  path.style.strokeDasharray = length + ' ' + length;
+  path.style.strokeDashoffset = length;
+  // Trigger a layout so styles are calculated & the browser
+  // picks up the starting position before animating
+  path.getBoundingClientRect();
+  // Define our transition
+  path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 2s ease-in-out';
+  // Go!
+  path.style.strokeDashoffset = '0';
+}
+
+//Repeat every 2000 milliseconds
+//Repeat after 2000 milliseconds for 1 time
+//setTimeout(StartAnimation, 2000);
+setInterval(StartPreloader, 2000)
+
+
+//#region HORIZONTAL NAVIGATION BAR
+  const navigationButtons = document.querySelector('.menu__contact')
+  const button = document.querySelector('.menu__button');
+  const menu = document.querySelector('.menu__body');
+  const close = document.querySelector('.menu__header button');
+  const overlay = document.querySelector('.menu__overlay');
+
+  function showMenu () {
+    button.setAttribute('hidden', '');
+    menu.removeAttribute('hidden');
+    overlay.removeAttribute('hidden');
+  };
+
+  function hideMenu () {
+    menu.setAttribute('hidden', '');
+    overlay.setAttribute('hidden', '');
+    button.removeAttribute('hidden');
+  };
+
+  navigationButtons.addEventListener('click',hideMenu);
+  button.addEventListener('click', showMenu);
+  close.addEventListener('click', hideMenu);
+  overlay.addEventListener('click', hideMenu); 
+//#endregion
+  
+//#region HOME PAGE
+GetTypedWelcomeMessage();
+
+function GetTypedWelcomeMessage()
+{
+    return new Typed(".text-slider-new", {
+      //strings: ['<span>Just kidding :D this happens only in films</span>','Welcome to my website! </br>I am <strong class="title" style="font-size: 8vmin;">Francesco Vasturzo</strong>,</br>an <span style="color:green;">it</span>ali<span style="color:red;">an</span> software engineer'],
+      strings: ['<span>Just kidding :D</span>'],
+      typeSpeed:50,
+      startDelay: 4500,
+      backSpeed: 0,
+      smartBackspace: true,
+      shuffle: false,
+      backDelay: 100,
+      loop: false,
+      cursorChar: '',
+      contentType: 'html',
+      onComplete: (self) => {
+        var style = getComputedStyle(document.body)
+        var backcolor = style.getPropertyValue('--dark');
+        RenderWebsiteAfterIntro();
+          $('#js-main-container').pagepiling({
+              sectionsColor: [backcolor,backcolor,backcolor,backcolor],
+              anchors: ['Home', 'AboutMe', 'Skills', 'Contacts'],
+              navigation:false,
+              onLeave: function(index, nextIndex, direction){
+                console.log('slided from', index, 'to', nextIndex);
+                let currentPage = nextIndex - 1;
+                changeActiveNavigationItemOnScroll(nextIndex - 1); 
+                if ( currentPage == Pages.About) 
+                {
+                  AboutMeContentAnimation();
+                  RemoveExistingCard();
+                  drawChart();
+                }
+                if ( currentPage == Pages.Skills) CarouselFactory(); 
+                if ( currentPage == Pages.Contacts) StartContactMessage(contactMeOptions);       
+            }, 
+          });
+        }
+      }); 
+  }
+//#endregion HOME PAGE
+
+//#region SKILLS PAGE
+function CarouselFactory() {
+    showcase.Cloud9Carousel({
+      yOrigin: 10,
+      yRadius: 10,
+      buttonLeft: $(".left"),
+      buttonRight: $(".right"),
+      autoPlay: 0,
+      farScale: 0.2,
+      bringToFront: true,
+      onRendered: OnCarouselRendering,
+      onLoaded: function() {
+        showcase.css('visibility','visible')
+        showcase.css('display','none')
+        showcase.fadeIn(1000)
+      }
+    });
+}
+//#endregion
+
+//#region CONTACT PAGE
+var contactMeOptions = {
+    strings: ['Although I am not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!'],
+    //strings: ['<span>Just kidding :D</span>'],
+    typeSpeed:40,
+    startDelay: 0,
+    backSpeed: 0,
+    smartBackspace: true,
+    shuffle: false,
+    backDelay: 100,
+    loop: false,
+    cursorChar: '',
+    contentType: 'html',
+  }; 
+//#endregion
+ 
+ </script> 
+</body>
+</html>
