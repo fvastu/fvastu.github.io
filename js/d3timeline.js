@@ -21,6 +21,8 @@ function checkForAnExistingChart(containerID)
 
 function drawChart() {
   checkForAnExistingChart("#timelineContainer");
+  let cardContainerId = 'checkpoint';
+  Reset(cardContainerId);
   let timelineContainer = document.getElementById("timelineContainer")
   var dateOffset = 20;
   var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -28,7 +30,7 @@ function drawChart() {
   let scaleValue = 0.95;
   if (w < 500) scaleValue = 1.3; //problem in positioning on mobile
   if (w > 500 && w < 800) scaleValue = 1.2; //problem in positioning on medium screen
-  if (w > 800 && w < 1100) scaleValue = 1.1; //problem in positioning on medium screen
+  if (w > 800 && w < 1100) scaleValue = 1.1; //problem in positioning on large screen
   var graphicsWidth = 300;
   const xPosition = timelineContainer.clientWidth / scaleValue ;
   const svg = d3.select("#js-timelineChart").append("svg").attr('id','Chart').attr("height", h * 0.80).attr("width", w);
@@ -130,18 +132,15 @@ function drawChart() {
 
 function OnMouseOver(data)
 {
-  StopAnimation();
+  StopAnimation(); //stop mouse move animation when hover an item
   console.log('confetti triggered');
   let cardId = 'checkpoint';
-  //var self = d3.select('#circle-' + data.id);
-  //var clickPosition = { x: self.attr('cx'), y: self.attr('cy')};
   var cardData = { Title: data.name, Place: data.placeName, Date: 'from ' + data.startDate + " to " + data.endDate, Description: data.description, ID: data.id, IsDegree: data.category == "Education" ? true : false };
   var card =  CreateCard(cardData,cardId);
-  //SetCardPosition(card,clickPosition);
   SetCardPositionIntoTheMiddle(card);
   AppendChildTo(card,'timelineContainer');
   AnchorCloseButtonPosition();
-  AddListeners();
+  AddCloseListener();
   ThrowConfetti(GetConfettiStartPosition(cardId, 'js-close-card'), true);
 }
 
@@ -250,35 +249,6 @@ function AppendChildTo(cardContainer,id)
     timelineContainer.appendChild(cardContainer.node());
 }
 
-function CreateOldCard(cardValue,cardContainerId)
-{
-    var cardContainer = d3.create('div');
-    cardContainer.attr('id',cardContainerId).attr('class','card-container');
-    cardContainer.append('a').attr('id','js-close-card').attr('href','#').attr('class','close horizontal-center').html('X');
-    var card = d3.create('div').attr('id','js-card').attr('class','card');
-    if (cardValue.IsDegree)
-    {
-      card.append('div').attr('class','card__image-container').append('img').attr('class','card__image').attr('src','https://freepngimg.com/thumb/education/59137-ceremony-and-certificate-degree-cap-graduation-bachelor.png')
-    }
-    else
-    {
-      card.append('div').attr('class','card__image-container').append('img').attr('class','card__image').attr('src','/assets/Programmer.png')
-    }
-    var svg = d3.create('svg').attr('class', 'card__svg').attr('viewBox','0 0 800 500');
-    svg.append('path').attr('d',"M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500").attr('stroke', 'transparent').attr('fill','transparent');
-    svg.append('path').attr('d',"M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400").attr('class','card__line').attr('stroke', 'transparent').attr('fill','transparent');
-    var cardContent = d3.create('div').attr('class', 'card__content');
-    var title = d3.create('h1').attr('class', 'card__title').html(cardValue.Title);
-    var place = d3.create('h1').attr('class', 'card__place').html(cardValue.Place);
-    var description = d3.create('p').attr('class','card__text').html(cardValue.Description);
-    cardContent.append(() => title.node());
-    cardContent.append(() => place.node());
-    cardContent.append(() => description.node());
-    card.append(() => svg.node());
-    card.append(() => cardContent.node());
-    cardContainer.append(() => card.node());
-    return cardContainer;
-}
 
 function CreateCard(cardValue,cardContainerId)
 {
@@ -316,7 +286,7 @@ function CreateCard(cardValue,cardContainerId)
   return cardContainer;
 }
 
-function AddListeners()
+function AddCloseListener()
 {
     //Remove the card when click on the X
     $("#js-close-card").click(function(){
@@ -328,14 +298,15 @@ function AddListeners()
 
 function AnchorCloseButtonPosition()
 {
-  d3.select("#js-close-card").attr('style','position:relative; top:' + -16 + 'px; left:' + -16 + 'px;');
+  var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if (w >= 375) d3.select("#js-close-card").attr('style','position:relative; top:' + -16 + 'px; left:' + -16 + 'px;');
+  else d3.select("#js-close-card").attr('style','position:relative; top:' + 16 + 'px; left:' + -8 + 'px;');
 }
 
 //Check for the existence of a card, if a card exists returns true
 function CardExist()
 {
     var card = $("#js-card")[0];
-    if (card == undefined) return false;
-    return true;
+    return (card != undefined);
 }
 

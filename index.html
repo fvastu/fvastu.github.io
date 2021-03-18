@@ -279,6 +279,9 @@
   <script src="js/main.js" defer></script>
   <script> 
 
+//Use this line in production
+console.log = function() {}
+
 const Pages = { Home: 0, About: 1, Skills: 2, Contacts: 3 }
 
 var showcase = $("#showcase"), title = $('#skill__title'), value = $('#skill__value')
@@ -291,8 +294,8 @@ StartPreloader();
 
 function StartPreloader()
 {
-  var path = document.querySelector('.preloader-container path');
-  var length = path.getTotalLength();
+  let path = document.querySelector('.preloader-container path');
+  let length = path.getTotalLength();
   // Clear any previous transition
   path.style.transition = path.style.WebkitTransition = 'none';
   // Set up the starting positions
