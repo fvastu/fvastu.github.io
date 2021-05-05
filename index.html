@@ -44,10 +44,7 @@
     <!-- font-->
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
-<style>
 
-
-</style>
 <body class="dark-body">
 
 <!--#region Preloader -->
@@ -67,16 +64,18 @@
 <!--#endregion-->
 
 <!--#region NavigationBar -->
- <div class="icon-bar desktop-visibility" id="js-vertical-nav-container">
-  <a class="item current-item" data-menuanchor="Home" href="#Home"><i class="fa fa-home"></i><div class="label"><span>Home</span></div></a>
-  <a class="item" data-menuanchor="AboutMe" href="#AboutMe"><i class="fa fa-search"></i><div class="label"><span>About me</span></div></a>
-  <a class="item" data-menuanchor="Skills" href="#Skills"><i class="fa fa-laptop"></i><div class="label"><span>Skills</span></div></a>
-  <a class="item" data-menuanchor="Contacts" href="#Contacts"><i class="fas fa-at"></i><div class="label"><span>Contact</span></div></a>
-</div>
+<nav class="icon-bar desktop-visibility" id="js-vertical-nav-container">
+  <a id='js-circle' class="current-item circle-icon-background"></<a>
+  <a data-menuanchor="Home" data-menu-index = "0" href="#Home"><i class="fa fa-home"></i><div class="label"><span>Home</span></div></a>
+  <a data-menuanchor="AboutMe" data-menu-index = "1" href="#AboutMe"><i class="fa fa-search"></i><div class="label"><span>About me</span></div></a>
+  <a data-menuanchor="Skills"  data-menu-index = "2" href="#Skills"><i class="fa fa-laptop"></i><div class="label"><span>Skills</span></div></a>
+  <a data-menuanchor="Portfolio"  data-menu-index = "3" href="#Portfolio"><i class="fa fa-code"></i><div class="label"><span>Portfolio</span></div></a>
+  <a data-menuanchor="Contacts" data-menu-index = "4" href="#Contacts"><i class="fas fa-at"></i><div class="label"><span>Contact</span></div></a>
+</nav>
 <!--#endregion-->
 
 <!--#region HorizontalNavigationBar -->
-<div class="hero__wrapper" id="js-horizontal-nav-container">
+<nav class="mobile__nav__wrapper" id="js-horizontal-nav-container">
   <div class="mobile-navigation">
     <button class="menu__button">
       <div>
@@ -97,19 +96,20 @@
         <a data-menuanchor="Home" href="#Home"><i class="fa fa-home"></i><span>Home</span></a>
         <a data-menuanchor="AboutMe" href="#AboutMe"><i class="fa fa-search"></i><span>About me</span></a>
         <a data-menuanchor="Skills" href="#Skills"><i class="fa fa-laptop"></i><span>Skills</span></a>
+        <a data-menuanchor="Portfolio" href="#Portfolio"><i class="fa fa-code"></i><span>Portfolio</span></a>
         <a data-menuanchor="Contacts" href="#Contacts"><i class="fa fa-at"></i><span>Contacts</span></a>
       </div>
     </section>
     <div class="menu__overlay" hidden="hidden"></div>
   </div>
-</div>
+</nav>
 <!--#endregion-->
 
 <!--Background container for the background with opacity custom-->
 <div class="background-wrapper"></div>
   
 <!--#region MAIN CONTENT -->
-<div class="container-fluid overlap-main-content" id="js-main-container">
+<main class="container-fluid overlap-main-content" id="js-main-container">
 
     <!--#region HOME PAGE ----------->
     <div class="row section vertical-center horizontal-center" id="Home" >
@@ -232,6 +232,57 @@
       </div>
     </div>
     <!--#endregion END SKILLS PAGE -->
+
+    <!--#region PORTFOLIO PAGE --------->
+    <div class="row section vertical-center pp-scrollable fill-height padding-content" id="Portfolio" style="overflow:hidden; visibility: hidden;">
+      <div class="title-wrapper">
+        <h1 class="title green-background">Portfolio</h1>
+      </div>
+      <section class="portfolio-section">
+        <div class="portfolio-card-grid">
+          <a class="portfolio-card" href="#">
+            <div class="portfolio-card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
+            <div class="portfolio-card__content">
+              <h3 class="portfolio-card__heading">Paola Stefanelli's Website</h3>
+            </div>
+            <div class="portfolio-card__overlay">
+                <span class="portfolio-card__overlay__text">UI Design for </span>
+                <button class="portfolio-card__overlay__button center-button" onclick="location.href='http://www.google.it'" type="button">
+                    <div>
+                        <img src="/assets/location.png"></img>
+                        <span>DEMO</span>
+                    </div>
+                </button>
+            </div>
+          </a>
+    
+          <a class="portfolio-card" href="#">
+            <div class="portfolio-card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+            <div class="portfolio-card__content">
+              <h3 class="portfolio-card__heading">FantaAsta</h3>
+            </div>
+            <div class="portfolio-card__overlay">
+                <span class="portfolio-card__overlay__text">UI Design for </span>
+                <div class="portfolio-card__overlay__button__container">
+                  <button class="portfolio-card__overlay__button left-button" onclick="location.href='http://www.google.it'" type="button">
+                      <div>
+                          <img src="/assets/location.png"></img>
+                          <span>DEMO</span>
+                      </div>
+                  </button>
+                  <button class="portfolio-card__overlay__button right-button" onclick="location.href='http://www.google.it'" type="button">
+                      <div>
+                          <img src="/assets/location.png"></img>
+                          <span>Github</span>
+                      </div>
+                  </button>
+                </div>
+            </div>
+          </a>
+        <div>
+      </section>
+    </div>
+    <!--#endregion END SKILLS PAGE -->
   
     <!--#region CONTACT PAGE -------->
     <div class="row section vertical-center pp-scrollable fill-height padding-content" id="Contacts" style="overflow-x: hidden;">
@@ -263,7 +314,7 @@
     </div>
     <!--#endregion END CONTACT PAGE-->
   
-</div>
+</main>
 <!--#endregion-->
  
  <script src="js/min/jquery.fittext.min.js"></script>
@@ -282,11 +333,13 @@
 //Use this line in production
 console.log = function() {}
 
-const Pages = { Home: 0, About: 1, Skills: 2, Contacts: 3 }
+const Pages = { Home: 0, About: 1, Skills: 2, Portfolio:3, Contacts: 4 }
 
 var showcase = $("#showcase"), title = $('#skill__title'), value = $('#skill__value')
 var handCursorMove = new gsap.timeline();
 var handCursorClick = new gsap.timeline();
+
+var currentCircleSelected = 0;
 
 $("#js-fit-text").fitText(1.5);
 
@@ -347,8 +400,8 @@ GetTypedWelcomeMessage();
 function GetTypedWelcomeMessage()
 {
     return new Typed(".text-slider-new", {
-      strings: ['<span>Just kidding :D this happens only in films</span>','Welcome to my website! </br>I am <strong class="title" style="font-size: 8vmin;">Francesco Vasturzo</strong>,</br>an <span style="color:green;">it</span>ali<span style="color:red;">an</span> software engineer'],
-      //strings: ['<span>Just kidding :D</span>'],
+      //strings: ['<span>Just kidding :D this happens only in films</span>','Welcome to my website! </br>I am <strong class="title" style="font-size: 8vmin;">Francesco Vasturzo</strong>,</br>an <span style="color:green;">it</span>ali<span style="color:red;">an</span> software engineer'],
+      strings: ['<span>Just kidding :D</span>'],
       typeSpeed:50,
       startDelay: 4500,
       backSpeed: 0,
@@ -364,7 +417,7 @@ function GetTypedWelcomeMessage()
         RenderWebsiteAfterIntro();
           $('#js-main-container').pagepiling({
               sectionsColor: [backcolor,backcolor,backcolor,backcolor],
-              anchors: ['Home', 'AboutMe', 'Skills', 'Contacts'],
+              anchors: ['Home', 'AboutMe', 'Skills', 'Portfolio','Contacts'],
               navigation:false,
               onLeave: function(index, nextIndex, direction){
                 console.log('sliding from: ', index, 'to: ', nextIndex);
@@ -377,6 +430,7 @@ function GetTypedWelcomeMessage()
                   drawChart();
                 }
                 if ( currentPage == Pages.Skills) CarouselFactory(); 
+                if ( currentPage == Pages.Portfolio) $("#Portfolio").addClass("visible");
                 if ( currentPage == Pages.Contacts) StartContactMessage(contactMeOptions);       
               },
               afterLoad: function(anchorLink, index){

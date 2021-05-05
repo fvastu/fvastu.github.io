@@ -10,6 +10,12 @@
   --dark-blue: #1c202c;
   --background-opacity: 0.3;
   --background-image: url("/assets/Backgrounds/ConnectionsTop.png");
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 80vw;
 }
 
 * {
@@ -27,7 +33,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--light);
+  background-color: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  );
   border-radius: 20px;
   border: 2px solid var(--dark-primary);
   background-clip: content-box;
@@ -478,64 +488,6 @@ a:link {
   z-index: 1;
 }
 
-.icon-bar {
-  width: 60px; /* Set a specific width */
-  background-color: transparent; /* Dark-grey background */
-  z-index: 1000;
-  list-style: none;
-  padding: 0;
-  position: fixed;
-  visibility: collapse;
-  top: 50%;
-  left: 2vh;
-  border: 2px solid var(--dark-primary);
-  border-radius: 60px;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.icon-bar a {
-  margin-bottom: 1rem;
-  border-radius: 30px;
-  height: 60px;
-  padding: 10px;
-  display: block; /* Make the links appear below each other instead of side-by-side */
-  text-align: center; /* Center-align text */
-  transition: all 0.3s ease; /* Add transition for hover effects */
-  color: var(--neutral); /* White text color */
-  font-size: 2.5rem; /* Increased font-size */
-}
-
-.icon-bar a:last-child {
-  margin-bottom: 0rem;
-  border-radius: 30px;
-  height: 60px;
-  padding: 10px;
-  display: block; /* Make the links appear below each other instead of side-by-side */
-  text-align: center; /* Center-align text */
-  transition: all 0.3s ease; /* Add transition for hover effects */
-  color: var(--neutral); /* White text color */
-  font-size: 2.5rem; /* Increased font-size */
-}
-
-.icon-bar a:hover {
-  background-color: var(--light-primary);
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 10px var(--light-primary),
-    0 0 10px var(--light-primary);
-}
-
-i {
-  color: var(--neutral);
-}
-
-.current-item {
-  background-color: var(--dark-primary);
-  box-shadow: 0 0 5px var(--light-primary);
-}
-
 .label {
   position: relative;
   display: inline-block;
@@ -568,6 +520,73 @@ i {
   opacity: 1;
 }
 
+.icon-bar {
+  width: 40px; /* Set a specific width */
+  background-color: transparent; /* Dark-grey background */
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  visibility: collapse;
+  top: 50%;
+  left: 2vh;
+  border: 2px solid var(--dark-primary);
+  border-radius: 60px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  margin-bottom: 1rem;
+  border-radius: 30px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+  display: block; /* Make the links appear below each other instead of side-by-side */
+  text-align: center; /* Center-align text */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: var(--neutral); /* White text color */
+  font-size: 20px; /* Increased font-size */
+}
+
+.icon-bar a:last-child {
+  margin-bottom: 0rem;
+  border-radius: 30px;
+  height: 35px;
+  padding-right: 0px;
+  display: block; /* Make the links appear below each other instead of side-by-side */
+  text-align: center; /* Center-align text */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: var(--neutral); /* White text color */
+  font-size: 20px; /* Increased font-size */
+}
+
+.icon-bar a:hover i {
+  color: var(--primary);
+  /* box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 10px var(--light-primary),0 0 10px var(--light-primary); */
+}
+
+i {
+  color: var(--neutral);
+}
+
+.current-item {
+  background-color: var(--dark-primary);
+  box-shadow: 0 0 5px var(--light-primary);
+}
+
+.circle-icon-background {
+  z-index: -1;
+  position: absolute;
+  top: -5px;
+  width: 50px;
+  left: -7px;
+  height: 50px;
+}
+
 /*#endregion --------------- END NAVIGATION BAR -----------------*/
 
 /* #region=============== MOBILE NAVIGATION BAR =============*/
@@ -575,7 +594,7 @@ i {
   z-index: 0;
 }
 
-.hero__wrapper {
+.mobile__nav__wrapper {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -583,7 +602,7 @@ i {
   visibility: collapse;
 }
 
-.hero__wrapper div:nth-child(1) {
+.mobile__nav__wrapper div:nth-child(1) {
   width: 100vw;
 }
 
@@ -939,6 +958,179 @@ i {
 /* #endregion
 /* #region================= SKILLS CARD ================= */
 
+/*#region===================PORTFOLIO CARDS ===================*/
+
+.portfolio-section {
+  display: flex;
+  min-height: 100%;
+  height: 100%;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  min-width: var(--width-container);
+  margin-left: 10vw;
+  margin-right: -10vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-card {
+  list-style: none;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  min-width: 250px;
+  margin: auto;
+  height: max(35vh, 150px);
+}
+
+.portfolio-card:before {
+  content: "";
+  display: block;
+}
+
+.portfolio-card__background {
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: filter 200ms linear, transform 200ms linear;
+}
+
+.portfolio-card:hover .portfolio-card__background {
+  transform: scale(1.05) translateZ(0);
+}
+
+.portfolio-card:hover .portfolio-card__overlay {
+  transition: transform 0.5s;
+  visibility: visible;
+  transform: translateY(105%) scale(1.05) translateZ(0);
+}
+
+.portfolio-card-grid:hover
+  > .portfolio-card:not(:hover)
+  .portfolio-card__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.portfolio-card__content {
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.portfolio-card__category {
+  color: var(--neutral-dark);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.portfolio-card__overlay {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  position: relative;
+  visibility: hidden;
+  display: block;
+  height: 50%;
+  transform: translateY(150%);
+  border-radius: var(--spacing-l);
+}
+
+.portfolio-card__heading {
+  color: var(--neutral);
+  pointer-events: none;
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+.portfolio-card__overlay__text {
+  color: white;
+  position: relative;
+  top: 20%;
+  left: 10%;
+  font-size: 1.6rem;
+}
+
+.portfolio-card__overlay__button__container {
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  width: 100%;
+  min-width: 100%;
+}
+
+.portfolio-card__overlay__button {
+  background-color: white;
+  height: 30px;
+  width: 100px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.center-button {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left-button {
+  position: relative;
+  margin-left: 7%;
+  float: left;
+}
+
+.right-button {
+  position: relative;
+  margin-right: 7%;
+  float: right;
+}
+
+.portfolio-card__overlay__button div {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 3px;
+}
+
+.portfolio-card__overlay__button div img {
+  height: 20px;
+  width: auto;
+}
+
+.portfolio-card__overlay__button div span {
+  margin-left: 10px;
+}
+/*#endregion */
+
 /*#region ==================SKILLS =========================*/
 
 .skill__wrapper {
@@ -1245,6 +1437,19 @@ svg {
     justify-content: center;
     align-items: top;
     order: 1;
+  }
+}
+
+/* Change grid inside portfolio page */
+@media (min-width: 540px) {
+  .portfolio-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .portfolio-card-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

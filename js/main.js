@@ -29,7 +29,7 @@ $(document).ready(function(){
   });
 
   $(document).ready(function() {
-    $('div.icon-bar a').on( 'click', changeActiveNavigationItem);
+    $('.icon-bar a').on( 'click', changeActiveNavigationItem);
   });
 
 window.addEventListener('resize', FunctionManager(function (event) {
@@ -43,13 +43,30 @@ window.addEventListener('resize', FunctionManager(function (event) {
     GetTypedWriterHomePage();
   })
 
+  
   function changeActiveNavigationItem()
   {
-    var currentActive = $(this).parent().find( 'a.current-item' );
-    var href = currentActive.attr('href');
+    let currentPage = $(this)[0];
+    ChangeUrlTo(currentPage);
+    ChangeCirclePositionTo(currentPage);
+  }
+
+  function ChangeUrlTo(currentPage)
+  {
+    let href = currentPage.attributes[2].value;
     window.location.href = href;
-    currentActive.removeClass( 'current-item' );
-    $(this).addClass( 'current-item' );
+  }
+
+  function ChangeCirclePositionTo(pageSelected)
+  {   
+    if (currentCircleSelected == pageSelected.dataset.menuIndex) return; //don't trigger animation if the index didn't change
+    currentCircleSelected = pageSelected.dataset.menuIndex ;
+    let circle = $('#js-circle');
+    //Change absolute position but for the first element is different
+    let offsetPosition = (46 * ( currentCircleSelected ) - 2 * (currentCircleSelected == 0 ? 5 : currentCircleSelected > 2 ? - 0.7 * currentCircleSelected : 1)) + 'px';
+    circle.animate({"left": "10px", "width": "20px" } , 100); //make thinner
+    circle.delay(100).animate({"top": offsetPosition } , 100); //now move
+    circle.delay(100).animate({"left": "-7px", "width": "50px" } , 100); //make again the original size
   }
 
   function GetTypedWriterHomePage(){
@@ -92,6 +109,13 @@ function RenderWebsiteAfterIntro()
   ShowScrollDownContainer();
   ShowVerticalNavigationBar();
   ShowTitles();
+  ShowPortfolioCards();
+}
+
+function ShowPortfolioCards()
+{
+  let portfolio = document.getElementById("Portfolio");
+  portfolio.style.visibility = "visible";
 }
 
 function ShowTitles()
@@ -125,14 +149,13 @@ function ShowScrollDownContainer()
   moreAboutMeButton.style.visibility = "visible";
 }
 
+
 function changeActiveNavigationItemOnScroll(indexActiveElement)
 {
-  var navigationItemsCollection = document.querySelectorAll("#js-vertical-nav-container > a");
-  for (var i = 0; i < navigationItemsCollection.length; i++) {
-    navigationItemsCollection[i].classList.remove("current-item");
-  }
-  navigationItemsCollection[indexActiveElement].classList.add("current-item");
+  var navigationItemsCollection = document.querySelectorAll("#js-vertical-nav-container a");
+  ChangeCirclePositionTo(navigationItemsCollection[indexActiveElement + 1]);
 }
+
 
 function ShowDoneText()
 {
