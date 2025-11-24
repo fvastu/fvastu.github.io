@@ -285,7 +285,13 @@ const index: React.FC<indexProps> = () => {
           </div>
         </div>
         <main className="container">
-          <p className="about-text">{OWNER_BIO}</p>
+          <section className="section-projects">
+            <h1 className="heading-1">
+              <span>Who I am</span>
+              <small>❓</small>
+            </h1>
+            <h2 className="section-contact__h2">{OWNER_BIO}</h2>
+          </section>
           <section id="sectionProjects" className="section-projects">
             <h1 className="heading-1">
               <span>Yeah, I work hard </span> <small>💼</small>
