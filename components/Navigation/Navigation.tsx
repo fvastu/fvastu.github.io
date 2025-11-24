@@ -1,4 +1,3 @@
-import * as React from "react";
 import { cubicBezier, motion } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { MobileNavigation } from "./MobileNavigation";
