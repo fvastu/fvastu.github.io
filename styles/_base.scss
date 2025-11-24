@@ -62,7 +62,7 @@ body {
   pointer-events: none;
   transition: left top 0.1s ease-in-out;
   z-index: 1233333;
-  background-image: url("../public/svg/cursor.svg");
+  background-image: url("/svg/cursor.svg");
   background-size: contain;
   background-repeat: no-repeat;
   animation: cursorAnim 10s infinite linear;
