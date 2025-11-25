@@ -169,6 +169,25 @@ const index: React.FC<indexProps> = () => {
           />
           <meta name="twitter:url" content={OWNER_CANONICAL_URL} />
           <meta name="twitter:creator" content="@francescovasturzo" />
+
+          {/* JSON-LD Structured Data for Person */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: OWNER_NAME,
+                url: OWNER_CANONICAL_URL,
+                sameAs: [
+                  OWNER_GITHUB,
+                  OWNER_LINKEDIN,
+                  OWNER_TWITTER,
+                  OWNER_INSTAGRAM,
+                ],
+              }),
+            }}
+          />
         </Head>
         <audio
           loop
@@ -305,7 +324,7 @@ const index: React.FC<indexProps> = () => {
             </div>
             <div className="header__footer--right">
               <a
-                href="https://github.com/francescovasturzo"
+                href={OWNER_GITHUB}
                 rel="noopener noreferrer"
                 target="_blank"
                 aria-label="Visit my GitHub profile"
@@ -313,7 +332,7 @@ const index: React.FC<indexProps> = () => {
                 👾 GH
               </a>
               <a
-                href="https://www.linkedin.com/in/francescovasturzo"
+                href={OWNER_LINKEDIN}
                 rel="noopener noreferrer"
                 target="_blank"
                 aria-label="Visit my LinkedIn profile"
@@ -466,17 +485,6 @@ const index: React.FC<indexProps> = () => {
                 GitHub
               </a>
               <a
-                href={OWNER_TWITTER}
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Follow me on Twitter"
-              >
-                <span role="img" aria-label="bird">
-                  🐦
-                </span>{" "}
-                Twitter
-              </a>
-              <a
                 href={OWNER_LINKEDIN}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -486,17 +494,6 @@ const index: React.FC<indexProps> = () => {
                   💼
                 </span>{" "}
                 LinkedIn
-              </a>
-              <a
-                href={OWNER_INSTAGRAM}
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Follow me on Instagram"
-              >
-                <span role="img" aria-label="camera">
-                  📸
-                </span>{" "}
-                Instagram
               </a>
             </div>
           </section>

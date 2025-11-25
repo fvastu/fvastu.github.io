@@ -1,6 +1,6 @@
 // Owner and portfolio constants — optimized, concise, emoji‑free
 export const OWNER_NAME = "Francesco Vasturzo";
-export const OWNER_EMAIL = ""; // Not public on GitHub
+export const OWNER_EMAIL = "f.vasturzo@live.it";
 export const OWNER_GITHUB = "https://github.com/fvastu";
 export const OWNER_TWITTER = "";
 export const OWNER_LINKEDIN = "https://it.linkedin.com/in/fvastu";
