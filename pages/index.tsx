@@ -13,10 +13,10 @@ import {
   OWNER_DESCRIPTION,
   OWNER_OG_IMAGE,
   OWNER_TWITTER_CARD,
+  HERO_PRELOADER_TEXTS,
 } from "../modules/constants";
 import { cubicBezier, motion } from "framer-motion";
 import { Navigation } from "../components/Navigation/Navigation";
-import useSwr from "swr";
 import ReactGa from "react-ga";
 
 interface indexProps {}
@@ -33,20 +33,15 @@ const transition: { duration: number; ease: any } = {
   // ease: [0.6, 0.01, -0.05, 0.9],
 };
 
-const fetcher = (url: any) => fetch(url).then((res) => res.json());
-
 const index: React.FC<indexProps> = () => {
   const [speakerState, setSpeakerState] = useState("muted");
   const [isToggleOpen, setIsToggleOpen] = useState<boolean>(false);
-  const { error } = useSwr("/api/tweets", fetcher);
-
-  if (error) console.log(error);
 
   const refScroll = React.useRef(null);
   let lscroll: any;
 
   React.useEffect(() => {
-    ReactGa.initialize("UA-177100391-3");
+    // ReactGa.initialize("UA-177100391-3");
     ReactGa.pageview(window.location.pathname + window.location.search);
 
     if (!refScroll.current) return;
@@ -82,6 +77,7 @@ const index: React.FC<indexProps> = () => {
             image1: imgs[0].getAttribute("src"),
             image2: imgs[1].getAttribute("src"),
             displacementImage: el.dataset.displacement,
+            imagesRatio: 4 / 4, // Mantieni il rapporto per immagini portrait
           });
         }
       }
@@ -199,36 +195,36 @@ const index: React.FC<indexProps> = () => {
           <source src="sound/preloader.mp3" type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
-        <motion.div
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target="#menu-target"
-          animate={{ top: "-100vh", transition: { ...transition, delay: 9 } }}
-          className="preloader"
-        >
-          <div className="preloader__wrapper">
-            <motion.div
-              initial={{ x: -10, opacity: 0 }}
-              animate={{ x: 0, opacity: 1, transition: { ...transition } }}
-              className="preloader__left"
-            >
-              <img src="svg/fv-logo-left.svg" alt="Francesco Vasturzo logo" />
-            </motion.div>
-            <motion.div
-              initial={{ x: 10, opacity: 0 }}
-              animate={{ x: 0, opacity: 1, transition: { ...transition } }}
-              className="preloader__right"
-            >
-              <p className="preloader__text">HTML</p>
-              <p className="preloader__text">CSS/SCSS</p>
-              <p className="preloader__text">JAVASCRIPT</p>
-              <p className="preloader__text">TYPESCRIPT</p>
-              <p className="preloader__text">REACT JS</p>
-              <p className="preloader__text">NEXT JS</p>
-              <p className="preloader__text">FRAMER MOTION</p>
-            </motion.div>
-          </div>
-        </motion.div>
+        {false && (
+          <motion.div
+            data-scroll
+            data-scroll-sticky
+            data-scroll-target="#menu-target"
+            animate={{ top: "-100vh", transition: { ...transition, delay: 9 } }}
+            className="preloader"
+          >
+            <div className="preloader__wrapper">
+              <motion.div
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, transition: { ...transition } }}
+                className="preloader__left"
+              >
+                <img src="svg/fv-logo-left.svg" alt="Francesco Vasturzo logo" />
+              </motion.div>
+              <motion.div
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, transition: { ...transition } }}
+                className="preloader__right"
+              >
+                {HERO_PRELOADER_TEXTS.map((text, idx) => (
+                  <p className="preloader__text" key={idx}>
+                    {text}
+                  </p>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
         <div className="cursor"></div>
         <Navigation
           isOpen={isToggleOpen}
@@ -380,7 +376,12 @@ const index: React.FC<indexProps> = () => {
                   }
                 >
                   {project.images?.map((img: string, i: number) => (
-                    <img src={img} alt={project.name + " image"} key={i} />
+                    <img
+                      style={{ objectFit: "cover" }}
+                      src={img}
+                      alt={project.name + " image"}
+                      key={i}
+                    />
                   ))}
                 </div>
                 <div className="project-card__right">

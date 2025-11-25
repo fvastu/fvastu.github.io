@@ -9,14 +9,14 @@ export const OWNER_CANONICAL_URL = "https://github.com/fvastu";
 
 export const OWNER_PROJECTS = [
   {
-    name: "chakra-animated-on-scroll-stack",
-    url: "https://github.com/fvastu/chakra-animated-on-scroll-stack",
-    github: "https://github.com/fvastu/chakra-animated-on-scroll-stack",
+    name: "AgentIA",
+    url: "https://www.agentia.work/en",
+    github: "",
     dribbble: "",
-    images: [],
+    images: ["/webp/agentia-2.webp", "/webp/agentia-1.webp"],
     description:
       "Drop-in scroll animations for Chakra UI components. Minimal API, production-ready.",
-    tech: "TypeScript",
+    tech: "TypeScript, NextJS, Tailwind CSS",
     subtitle: "Chakra UI + Intersection Observer",
     scrollClass: "chakra-animated-anim",
     displacement: "webp/myDistorsionImage.webp",
@@ -26,7 +26,7 @@ export const OWNER_PROJECTS = [
     url: "https://github.com/fvastu/Fait",
     github: "https://github.com/fvastu/Fait",
     dribbble: "",
-    images: [],
+    images: ["/webp/heatrow-1.webp", "/webp/heatrow-2.webp"],
     description:
       "Landing page built with Chakra UI, Tailwind, and Next.js. Clean, fast, responsive.",
     tech: "TypeScript",
@@ -39,7 +39,7 @@ export const OWNER_PROJECTS = [
     url: "https://github.com/fvastu/use-zendesk-chat",
     github: "https://github.com/fvastu/use-zendesk-chat",
     dribbble: "",
-    images: [],
+    images: ["/webp/theartcode-1.webp", "/webp/theartcode-2.webp"],
     description:
       "React hook to embed Zendesk Chat in React/Next.js apps with one line.",
     tech: "TypeScript",
@@ -65,7 +65,7 @@ export const OWNER_PROJECTS = [
     url: "https://github.com/fvastu/nextjs-chakra-tailwind-starter-template",
     github: "https://github.com/fvastu/nextjs-chakra-tailwind-starter-template",
     dribbble: "",
-    images: [],
+    images: ["/webp/portfolio-old-1.webp", "/webp/portfolio-old-2.webp"],
     description:
       "Starter kit for building apps with Next.js, TypeScript, Chakra UI, and Tailwind.",
     tech: "TypeScript",
@@ -108,13 +108,13 @@ export const HERO_HEADING = {
 export const HERO_CTA = "View Projects";
 
 export const HERO_PRELOADER_TEXTS = [
+  "React",
+  "Next.js",
   "HTML",
   "CSS/SCSS",
   "JavaScript",
   "TypeScript",
-  "React",
-  "Next.js",
-  "Framer Motion",
+  "Performances",
 ];
 
 export const PROJECTS_SECTION_TITLE = "Selected Work";
