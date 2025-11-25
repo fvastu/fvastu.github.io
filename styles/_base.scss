@@ -52,6 +52,19 @@ body {
   grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
 }
 
+// Screen reader only text for accessibility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 // cursor
 .cursor {
   width: 8rem;
@@ -92,6 +105,9 @@ body {
 
   &__left {
     margin-right: 1rem;
+    img {
+      height: 4rem;
+    }
   }
 
   &__right {

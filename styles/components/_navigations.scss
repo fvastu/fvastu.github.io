@@ -60,13 +60,15 @@
 }
 
 .brand-logo {
-  // &__icon {
-  // }
+  &__icon {
+    height: 4rem;
+  }
   &__text-wrapper {
     overflow: hidden;
     margin-left: 1rem;
   }
   &__text {
+    height: 1rem;
     animation: logoLeftAnim 15s cubic-bezier(1, 0, 0, 1) infinite;
     @media only screen and (max-width: 40em) {
       // display: none;

@@ -1,6 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 import "../styles/global.scss";
 
 function handleExitComplete() {
@@ -12,12 +13,18 @@ function handleExitComplete() {
 function MyApp({ Component, pageProps }: any) {
   const router = useRouter();
   return (
-    <div>
-      <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-        <Component {...pageProps} key={router.route} />
-        <Analytics />
-      </AnimatePresence>
-    </div>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+      </Head>
+      <div lang="en">
+        <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+          <Component {...pageProps} key={router.route} />
+          <Analytics />
+        </AnimatePresence>
+      </div>
+    </>
   );
 }
 

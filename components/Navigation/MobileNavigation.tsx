@@ -57,17 +57,49 @@ export const MobileNavigation = ({ variants, isOpen }: any) => (
         <div className="navigation-top__left">
           <h4 className="navigation-h4">DONT BE A STRANGER</h4>
           <div className="navigation-top__left--links">
-            <a href={OWNER_GITHUB} rel="noopener" target="_blank">
-              👾 GH
+            <a
+              href={OWNER_GITHUB}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Visit GitHub profile"
+            >
+              <span role="img" aria-label="alien monster">
+                👾
+              </span>{" "}
+              GH
             </a>
-            <a href={OWNER_TWITTER} rel="noopener" target="_blank">
-              🐦 TW
+            <a
+              href={OWNER_TWITTER}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Visit Twitter profile"
+            >
+              <span role="img" aria-label="bird">
+                🐦
+              </span>{" "}
+              TW
             </a>
-            <a href={OWNER_LINKEDIN} rel="noopener" target="_blank">
-              💼 LD
+            <a
+              href={OWNER_LINKEDIN}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Visit LinkedIn profile"
+            >
+              <span role="img" aria-label="briefcase">
+                💼
+              </span>{" "}
+              LD
             </a>
-            <a href={OWNER_INSTAGRAM} rel="noopener" target="_blank">
-              📸 IN
+            <a
+              href={OWNER_INSTAGRAM}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Visit Instagram profile"
+            >
+              <span role="img" aria-label="camera">
+                📸
+              </span>{" "}
+              IN
             </a>
           </div>
         </div>
@@ -97,14 +129,15 @@ export const MobileNavigation = ({ variants, isOpen }: any) => (
             <a
               key={idx}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               href={project.url}
               className="navigation-bottom__projects-card"
+              aria-label={`View ${project.name} project`}
             >
               {/* Use first image if available, else fallback */}
               <img
                 src={project.images[0] || "webp/placeholder.webp"}
-                alt={project.name}
+                alt={`${project.name} project preview`}
               />
               <h2>
                 {project.name}

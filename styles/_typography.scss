@@ -19,6 +19,17 @@
       -webkit-text-fill-color: transparent;
       display: inline-block;
     }
+    small {
+      font-size: 5rem;
+      letter-spacing: -0.03em;
+      font-family: $font-secondary;
+      @media only screen and (max-width: 56.25em) {
+        font-size: 4.25rem;
+      }
+      @media only screen and (max-width: 37.5em) {
+        font-size: 3.5rem;
+      }
+    }
     &__sub {
       span {
         background-image: linear-gradient(
@@ -98,7 +109,7 @@
   animation: gradient 3s ease-in-out;
 }
 
-.adeola-anim {
+.fv-anim {
   background: linear-gradient(
     -45deg,
     var(--color-light-blue),

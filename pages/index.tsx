@@ -28,7 +28,7 @@ const hoverEffect =
   typeof window !== `undefined` ? require("hover-effect").default : null;
 
 const transition: { duration: number; ease: any } = {
-  duration: 1.4,
+  duration: 5.4,
   ease: cubicBezier(0.6, 0.01, -0.05, 0.9),
   // ease: [0.6, 0.01, -0.05, 0.9],
 };
@@ -121,28 +121,64 @@ const index: React.FC<indexProps> = () => {
     <>
       <div id="menu-target" data-scroll-container ref={refScroll}>
         <Head>
-          <link rel="icon" href="svg/favicon.svg" />
+          <link rel="icon" href="svg/favicon.svg" type="image/svg+xml" />
           <link href={OWNER_CANONICAL_URL} rel="canonical" />
           <meta name="theme-color" content="#10101A" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="#10101A"
           />
-          <title>{OWNER_NAME}</title>
+          <title>
+            {OWNER_NAME} | Full-Stack Developer & Creative Technologist
+          </title>
           <meta name="description" content={OWNER_DESCRIPTION} />
+          <meta
+            name="keywords"
+            content="Francesco Vasturzo, web developer, full-stack developer, react, next.js, javascript, typescript, portfolio, creative developer"
+          />
+          <meta name="author" content={OWNER_NAME} />
+          <meta name="robots" content="index, follow" />
+
+          {/* Open Graph */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content={OWNER_NAME} />
+          <meta
+            property="og:title"
+            content={`${OWNER_NAME} | Full-Stack Developer`}
+          />
           <meta property="og:url" content={OWNER_CANONICAL_URL} />
           <meta property="og:image" content={OWNER_OG_IMAGE} />
+          <meta
+            property="og:image:alt"
+            content={`${OWNER_NAME} portfolio preview`}
+          />
           <meta property="og:description" content={OWNER_DESCRIPTION} />
-          <meta name="twitter:title" content={OWNER_NAME} />
+          <meta property="og:site_name" content={OWNER_NAME} />
+          <meta property="og:locale" content="en_US" />
+
+          {/* Twitter */}
+          <meta name="twitter:card" content={OWNER_TWITTER_CARD} />
+          <meta
+            name="twitter:title"
+            content={`${OWNER_NAME} | Full-Stack Developer`}
+          />
           <meta name="twitter:description" content={OWNER_DESCRIPTION} />
           <meta name="twitter:image" content={OWNER_OG_IMAGE} />
-          <meta name="twitter:card" content={OWNER_TWITTER_CARD} />
+          <meta
+            name="twitter:image:alt"
+            content={`${OWNER_NAME} portfolio preview`}
+          />
           <meta name="twitter:url" content={OWNER_CANONICAL_URL} />
+          <meta name="twitter:creator" content="@francescovasturzo" />
         </Head>
-        <audio loop id="audioPlayer" autoPlay style={{ display: "none" }}>
+        <audio
+          loop
+          id="audioPlayer"
+          autoPlay
+          style={{ display: "none" }}
+          aria-label="Background music"
+        >
           <source src="sound/preloader.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
         </audio>
         <motion.div
           data-scroll
@@ -157,7 +193,7 @@ const index: React.FC<indexProps> = () => {
               animate={{ x: 0, opacity: 1, transition: { ...transition } }}
               className="preloader__left"
             >
-              <img src="svg/adeola-logo-left.svg" alt="adeola logo" />
+              <img src="svg/fv-logo-left.svg" alt="Francesco Vasturzo logo" />
             </motion.div>
             <motion.div
               initial={{ x: 10, opacity: 0 }}
@@ -193,6 +229,7 @@ const index: React.FC<indexProps> = () => {
                 data-scroll-to
                 className="header__hero--cta"
                 href="#sectionProjects"
+                aria-label="View my projects"
               >
                 VIEW PROJECTS
               </a>
@@ -201,16 +238,24 @@ const index: React.FC<indexProps> = () => {
           <div className="header__footer">
             <div className="header__footer--left">
               <div className="speaker">
-                <div
+                <button
                   onClick={handleSpeaker}
                   className={`${"speaker__toggle"} ${
                     speakerState === "unmuted"
                       ? `${"speaker__toggle--anim"}`
                       : ``
                   }`}
+                  aria-label={
+                    speakerState === "muted"
+                      ? "Unmute background music"
+                      : "Mute background music"
+                  }
+                  aria-pressed={speakerState === "muted"}
                 >
-                  &nbsp;
-                </div>
+                  <span className="sr-only">
+                    {speakerState === "muted" ? "Audio playing" : "Audio muted"}
+                  </span>
+                </button>
                 <div className="speaker__muted">
                   <img src="svg/muted.svg" alt="muted icon" />
                 </div>
@@ -261,40 +306,43 @@ const index: React.FC<indexProps> = () => {
             <div className="header__footer--right">
               <a
                 href="https://github.com/francescovasturzo"
-                rel="noopener"
+                rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Visit my GitHub profile"
               >
                 👾 GH
               </a>
               <a
-                href="https://www.linkedin.com/in/adeoladev"
-                rel="noopener"
+                href="https://www.linkedin.com/in/francescovasturzo"
+                rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Visit my LinkedIn profile"
               >
                 💼 LD
-              </a>
-              <a
-                href="https://www.instagram.com/francescovasturzo_"
-                rel="noopener"
-                target="_blank"
-              >
-                {" "}
-                📸 IN
               </a>
             </div>
           </div>
         </div>
-        <main className="container">
-          <section className="section-projects">
-            <h1 className="heading-1">
-              <span>Who I am</span>
-              <small>❓</small>
+        <main className="container" role="main">
+          <section className="section-projects" aria-labelledby="about-heading">
+            <h1 id="about-heading" className="heading-1">
+              <span>so...Who am I</span>
+              <small role="img" aria-label="question mark">
+                ❓
+              </small>
             </h1>
             <h2 className="section-contact__h2">{OWNER_BIO}</h2>
           </section>
-          <section id="sectionProjects" className="section-projects">
-            <h1 className="heading-1">
-              <span>Yeah, I work hard </span> <small>💼</small>
+          <section
+            id="sectionProjects"
+            className="section-projects"
+            aria-labelledby="projects-heading"
+          >
+            <h1 id="projects-heading" className="heading-1">
+              <span>Yeah, I work hard </span>{" "}
+              <small role="img" aria-label="briefcase">
+                💼
+              </small>
             </h1>
             <p className="paragraph">
               Each project is unique. Here are some of my works.
@@ -333,22 +381,33 @@ const index: React.FC<indexProps> = () => {
                     )}
                   </h2>
                   <a
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     target="_blank"
                     href={project.url}
                     className="project-card__link"
+                    aria-label={`Visit ${project.name} website`}
                   >
                     VISIT THE WEBSITE
                   </a>
                   <div className="project-card__socials">
                     {project.dribbble && (
-                      <a href={project.dribbble} target="_blank" rel="noopener">
-                        <img src="svg/dribble.svg" alt="dribble icon" />
+                      <a
+                        href={project.dribbble}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.name} on Dribbble`}
+                      >
+                        <img src="svg/dribble.svg" alt="Dribbble icon" />
                       </a>
                     )}
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener">
-                        <img src="svg/github.svg" alt="github icon" />
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.name} source code on GitHub`}
+                      >
+                        <img src="svg/github.svg" alt="GitHub icon" />
                       </a>
                     )}
                   </div>
@@ -356,46 +415,103 @@ const index: React.FC<indexProps> = () => {
               </div>
             ))}
           </section>
-          <section className="section-contact">
-            <h1 className="heading-1">
-              <span>Sold Yet? </span> <small>🤙</small>
+          <section
+            className="section-contact"
+            aria-labelledby="contact-heading"
+          >
+            <h1 id="contact-heading" className="heading-1">
+              <span>Sold Yet? </span>{" "}
+              <small role="img" aria-label="call me hand">
+                🤙
+              </small>
             </h1>
             <h2 className="section-contact__h2">
               {/* Contact text from constants */}
               {OWNER_DESCRIPTION}
-              <a href={`mailto:${OWNER_EMAIL}`} rel="noopener" target="_blank">
-                &nbsp; email 📧
+              <a
+                href={`mailto:${OWNER_EMAIL}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Send me an email"
+              >
+                &nbsp; email{" "}
+                <span role="img" aria-label="email icon">
+                  📧
+                </span>
               </a>
               .
             </h2>
           </section>
-          <section className="section-socials">
-            <h1 className="heading-1">
-              <span>Dont be a stranger!</span> <small>👋</small>
+          <section
+            className="section-socials"
+            aria-labelledby="socials-heading"
+          >
+            <h1 id="socials-heading" className="heading-1">
+              <span>Dont be a stranger!</span>{" "}
+              <small role="img" aria-label="waving hand">
+                👋
+              </small>
             </h1>
             <p className="paragraph">Connect with me online</p>
             <div className="section-socials--links">
-              <a href={OWNER_GITHUB} rel="noopener" target="_blank">
-                👾 GitHub
+              <a
+                href={OWNER_GITHUB}
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Follow me on GitHub"
+              >
+                <span role="img" aria-label="alien monster">
+                  👾
+                </span>{" "}
+                GitHub
               </a>
-              <a href={OWNER_TWITTER} rel="noopener" target="_blank">
-                🐦 Twitter
+              <a
+                href={OWNER_TWITTER}
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Follow me on Twitter"
+              >
+                <span role="img" aria-label="bird">
+                  🐦
+                </span>{" "}
+                Twitter
               </a>
-              <a href={OWNER_LINKEDIN} rel="noopener" target="_blank">
-                💼 LinkedIn
+              <a
+                href={OWNER_LINKEDIN}
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Connect with me on LinkedIn"
+              >
+                <span role="img" aria-label="briefcase">
+                  💼
+                </span>{" "}
+                LinkedIn
               </a>
-              <a href={OWNER_INSTAGRAM} rel="noopener" target="_blank">
-                📸 Instagram
+              <a
+                href={OWNER_INSTAGRAM}
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Follow me on Instagram"
+              >
+                <span role="img" aria-label="camera">
+                  📸
+                </span>{" "}
+                Instagram
               </a>
             </div>
           </section>
         </main>
-        <footer className="footer">
-          <img src="svg/adeola-logo-footer.svg" alt="footer logo" />
+        <footer className="footer" role="contentinfo">
+          <img src="svg/logo-footer.svg" alt="Francesco Vasturzo logo" />
           <div className="footer__socials">
             {/* Socials from constants if needed */}
-            <a href={OWNER_GITHUB} target="_blank" rel="noopener">
-              <img src="svg/github.svg" alt="github logo" />
+            <a
+              href={OWNER_GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my GitHub profile"
+            >
+              <img src="svg/github.svg" alt="GitHub logo" />
             </a>
           </div>
         </footer>

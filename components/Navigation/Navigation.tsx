@@ -38,17 +38,17 @@ export const Navigation = ({ isOpen, toggleOpen }: any) => {
         data-scroll-target="#menu-target"
         className="menu-top"
       >
-        <Link href="/" className="brand-logo">
+        <Link href="/" className="brand-logo" aria-label="Go to homepage">
           <img
             className="brand-logo__icon"
-            src="svg/adeola-logo-left.svg"
-            alt="logo icon"
+            src="svg/fv-logo-left.svg"
+            alt="Francesco Vasturzo logo icon"
           />
           <span className="brand-logo__text-wrapper">
             <img
               className="brand-logo__text"
-              src="svg/adeola-logo-right.svg"
-              alt={OWNER_NAME + " logo text"}
+              src="svg/fv-logo-right.svg"
+              alt={OWNER_NAME}
             />
           </span>
         </Link>
