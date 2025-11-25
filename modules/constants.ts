@@ -89,10 +89,10 @@ export const OWNER_PROJECTS = [
 ];
 
 export const OWNER_BIO =
-  "Software Engineer based in Italy. Frontend-focused. Performance, DX, and accessibility first.";
+  "I love coding. I create digital experiences using UI/UX and programming skills. I'm passionate about leveraging technology to improve lives.";
 
 export const OWNER_DESCRIPTION =
-  "I design and build fast, accessible web products. Strong focus on React, Next.js, TypeScript, and motion. I care about clean architecture, measurable performance, and maintainable UI systems.";
+  "Expertise in React, TypeScript, and JavaScript, honed through years of practical application. Strong collaboration skills in communication, teamwork, and leadership. Thrived in diverse company settings, driving results from startups to enterprises.";
 
 export const OWNER_OG_IMAGE = "";
 export const OWNER_TWITTER_CARD = "summary_large_image";
