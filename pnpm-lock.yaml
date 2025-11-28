@@ -18,7 +18,7 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1
       locomotive-scroll:
-        specifier: ^4.1.1
+        specifier: ^4.1.4
         version: 4.1.4
       next:
         specifier: 16.0.3
@@ -39,8 +39,8 @@ importers:
         specifier: ^1.94.2
         version: 1.94.2
       swr:
-        specifier: ^2.3.6
-        version: 2.3.6(react@19.2.0)
+        specifier: ^2.3.7
+        version: 2.3.7(react@19.2.0)
     devDependencies:
       '@types/node':
         specifier: 24.10.1
@@ -574,8 +574,8 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  swr@2.3.6:
-    resolution: {integrity: sha512-wfHRmHWk/isGNMwlLGlZX5Gzz/uTgo0o2IRuTMcf4CPuPFJZlq0rDaKUx+ozB5nBOReNV1kiOyzMfj+MBMikLw==}
+  swr@2.3.7:
+    resolution: {integrity: sha512-ZEquQ82QvalqTxhBVv/DlAg2mbmUjF4UgpPg9wwk4ufb9rQnZXh1iKyyKBqV6bQGu1Ie7L1QwSYO07qFIa1p+g==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -1025,7 +1025,7 @@ snapshots:
       client-only: 0.0.1
       react: 19.2.0
 
-  swr@2.3.6(react@19.2.0):
+  swr@2.3.7(react@19.2.0):
     dependencies:
       dequal: 2.0.3
       react: 19.2.0
