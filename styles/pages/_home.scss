@@ -165,14 +165,14 @@
   }
 
   .project-card {
-        &__actions {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 2rem;
-          margin-top: 2rem;
-          margin-bottom: 2rem;
-        }
+    &__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
     &__github-badge {
       display: inline-flex;
       align-items: center;
