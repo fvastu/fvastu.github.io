@@ -11,6 +11,7 @@ interface ProjectCardProps {
     displacement?: string;
     dribbble?: string;
     github?: string;
+    description?: string;
   };
 }
 
@@ -47,6 +48,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
           </>
         )}
       </h2>
+      {project.description && (
+        <p className="project-card__description">{project.description}</p>
+      )}
       <a
         rel="noopener noreferrer"
         target="_blank"
