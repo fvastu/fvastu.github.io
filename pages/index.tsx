@@ -376,12 +376,7 @@ const index: React.FC<indexProps> = () => {
                   }
                 >
                   {project.images?.map((img: string, i: number) => (
-                    <img
-                      style={{ objectFit: "cover" }}
-                      src={img}
-                      alt={project.name + " image"}
-                      key={i}
-                    />
+                    <img src={img} alt={project.name + " image"} key={i} />
                   ))}
                 </div>
                 <div className="project-card__right">

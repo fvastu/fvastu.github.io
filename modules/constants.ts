@@ -13,7 +13,7 @@ export const OWNER_PROJECTS = [
     url: "https://www.agentia.work/en",
     github: "",
     dribbble: "",
-    images: ["/webp/agentia-2.webp", "/webp/agentia-1.webp"],
+    images: ["/webp/agentia-1.webp", "/webp/agentia-2.webp"],
     description:
       "Drop-in scroll animations for Chakra UI components. Minimal API, production-ready.",
     tech: "TypeScript, NextJS, Tailwind CSS",

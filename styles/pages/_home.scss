@@ -304,9 +304,8 @@
 
       canvas {
         position: absolute;
-        // border-radius: inherit !important;
         z-index: 0;
-        height: 100% !important;
+        width: 100% !important;
       }
 
       img {
@@ -324,9 +323,11 @@
           top: 0;
           left: 0;
           opacity: 0;
+          object-fit: cover !important;
           transition: opacity 0.3s;
         }
         &:nth-child(2) {
+          object-fit: cover !important;
           position: absolute;
           top: 0;
           left: 0;
