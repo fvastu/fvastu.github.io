@@ -17,23 +17,10 @@ import {
   HERO_PRELOADER_TEXTS,
 } from "../modules/constants";
 import { cubicBezier, motion } from "framer-motion";
-import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Content from "../components/Content";
 import Footer from "../components/Footer";
 import ReactGa from "react-ga";
-
-interface Project {
-  tech: string;
-  images: string[];
-  name: string;
-  subtitle?: string;
-  url: string;
-  scrollClass?: string;
-  displacement?: string;
-  dribbble?: string;
-  github?: string;
-}
 
 interface IndexProps {}
 
@@ -56,8 +43,6 @@ const transition: { duration: number; ease: any } = {
 const Index: React.FC<IndexProps> = () => {
   // Speaker state and toggle logic via custom hook
   const { speakerState, toggleSpeaker } = useSpeaker("muted");
-  // Navigation menu toggle state
-  const [isToggleOpen, setIsToggleOpen] = React.useState<boolean>(false);
   // Ref for locomotive scroll container
   const refScroll = React.useRef(null);
   let lscroll: any;
@@ -118,13 +103,6 @@ const Index: React.FC<IndexProps> = () => {
     // Clear console for clean debugging
     console.clear();
   }, []);
-
-  /**
-   * Toggle navigation menu open/close state
-   */
-  function toggleBodyScroll(isToggleOpen: boolean) {
-    setIsToggleOpen(!isToggleOpen);
-  }
 
   return (
     <>
