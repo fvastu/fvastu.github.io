@@ -165,6 +165,46 @@
   }
 
   .project-card {
+        &__actions {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+    &__github-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #232731;
+      color: #fff;
+      font-family: $font-tertiary;
+      font-size: 1.6rem;
+      font-weight: 500;
+      border-radius: 2rem;
+      padding: 0.6rem 1.6rem;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(35, 37, 49, 0.12);
+      transition: background 0.2s, box-shadow 0.2s;
+      border: 1px solid #20222e;
+      &:hover {
+        background: #33364a;
+        box-shadow: 0 4px 16px rgba(35, 37, 49, 0.18);
+        color: #e6972f;
+      }
+      img {
+        margin-right: 0.6rem;
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+      span {
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+    }
     width: 80%;
     margin: 20rem auto;
     background: linear-gradient(

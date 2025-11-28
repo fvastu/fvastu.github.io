@@ -51,15 +51,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
       {project.description && (
         <p className="project-card__description">{project.description}</p>
       )}
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href={project.url}
-        className="project-card__link"
-        aria-label={`Visit ${project.name} website`}
-      >
-        VISIT THE WEBSITE
-      </a>
+      <div className="project-card__actions">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href={project.url}
+          className="project-card__link"
+          aria-label={`Visit ${project.name} website`}
+        >
+          VISIT THE WEBSITE
+        </a>
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card__github-badge"
+            aria-label={`View ${project.name} source code on GitHub`}
+          >
+            <img src="svg/github.svg" alt="GitHub icon" />
+            <span>GitHub</span>
+          </a>
+        )}
+      </div>
       <div className="project-card__socials">
         {project.dribbble && (
           <a
@@ -69,16 +83,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
             aria-label={`View ${project.name} on Dribbble`}
           >
             <img src="svg/dribble.svg" alt="Dribbble icon" />
-          </a>
-        )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${project.name} source code on GitHub`}
-          >
-            <img src="svg/github.svg" alt="GitHub icon" />
           </a>
         )}
       </div>
