@@ -48,6 +48,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
+      { url: "/opengraph-image" },
       {
         url: siteConfig.ogImage,
         width: 1200,
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: ["/twitter-image", siteConfig.ogImage],
     creator: siteConfig.social.twitter,
   },
   robots: {
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/manifest.json",
+  manifest: "/manifest.webmanifest",
   alternates: {
     canonical: siteConfig.url,
   },

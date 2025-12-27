@@ -3,21 +3,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { siteConfig } from "@/constants/siteConfig";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     navigation: [
-      { label: "Work", href: "#projects" },
-      { label: "Approach", href: "#approach" },
+      { label: "Work", href: "#work" },
+      { label: "About", href: "#about" },
       { label: "Process", href: "#process" },
       { label: "Contact", href: "#contact" },
     ],
     social: [
-      { label: "LinkedIn", href: "#", icon: Linkedin },
-      { label: "GitHub", href: "#", icon: Github },
-      { label: "Twitter", href: "#", icon: Twitter },
+      { label: "LinkedIn", href: siteConfig.social.linkedin, icon: Linkedin },
+      { label: "GitHub", href: siteConfig.social.github, icon: Github },
+      {
+        label: "Twitter",
+        href: `https://twitter.com/${siteConfig.social.twitter.replace(
+          "@",
+          ""
+        )}`,
+        icon: Twitter,
+      },
     ],
   };
 
@@ -44,11 +52,11 @@ export default function Footer() {
               development, and strategic digital experiences.
             </p>
             <a
-              href="mailto:hello@example.com"
+              href={`mailto:${siteConfig.author.email}`}
               className="inline-flex items-center gap-2 text-sm text-[#F5F5F0] hover:text-[#C9A86C] transition-colors duration-300"
             >
               <Mail className="w-4 h-4" />
-              hello@example.com
+              {siteConfig.author.email}
             </a>
           </div>
 

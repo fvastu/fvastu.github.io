@@ -43,7 +43,7 @@ export default function Header() {
         >
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="text-xl font-light tracking-tight hover:text-[#C9A86C] transition-colors duration-300"
             aria-label="Home"
           >
