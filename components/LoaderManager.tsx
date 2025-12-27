@@ -6,12 +6,9 @@ import SpinnerLoader from "./loaders/SpinnerLoader";
 import DotsLoader from "./loaders/DotsLoader";
 import PulseLoader from "./loaders/PulseLoader";
 import GridLoader from "./loaders/GridLoader";
-import OrbitLoader from "./loaders/OrbitLoader";
 import ProgressLoader from "./loaders/ProgressLoader";
 import MorphLoader from "./loaders/MorphLoader";
-import WaveLoader from "./loaders/WaveLoader";
 import ParticleLoader from "./loaders/ParticleLoader";
-import GlitchLoader from "./loaders/GlitchLoader";
 import TransitionEffect, { TransitionType } from "./TransitionEffect";
 
 const loaders = [
@@ -19,12 +16,9 @@ const loaders = [
   DotsLoader,
   PulseLoader,
   GridLoader,
-  OrbitLoader,
   ProgressLoader,
   MorphLoader,
-  WaveLoader,
   ParticleLoader,
-  GlitchLoader,
 ];
 
 export default function LoaderManager({
@@ -43,8 +37,10 @@ export default function LoaderManager({
 
   useEffect(() => {
     const onHeroLoaded = () => {
-      setIsLoading(false);
-      setTimeout(() => setShowContent(true), 600);
+      setTimeout(() => {
+        setIsLoading(false);
+        setShowContent(true);
+      }, 1000); // Delay to allow loader exit animation
     };
 
     // Listen for hero load event
