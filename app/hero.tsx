@@ -1,13 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import BackgroundGrid from "../components/hero/BackgroundGrid";
 import Hero3D from "../components/hero/Hero3D";
 import { useHeroScroll } from "../hooks/useHeroScroll";
 
+const variants = ["premium", "glass", "chrome", "stone", "aurora"] as const;
+
+type VariantType = (typeof variants)[number];
+
 export default function AgencyHeroMorphThrowWithWrapText_Grid() {
   const { heroOpacity, heroScale, scrollRef } = useHeroScroll();
+  const [variant, setVariant] = useState<VariantType>("chrome");
 
   return (
     <motion.section
@@ -32,16 +37,33 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
             </h1>
           </div>
         </div>
+        {/* Variant Selector */}
+        <div className="pointer-events-auto absolute top-6 right-6 md:right-16 lg:right-24 flex gap-2 bg-[#0A0A0A]/70 backdrop-blur-sm border border-[#1A1A1A] rounded-full px-3 py-2">
+          {variants.map((v) => (
+            <button
+              key={v}
+              onClick={() => setVariant(v)}
+              className={`text-[10px] md:text-xs tracking-[0.15em] uppercase px-2 md:px-3 py-1 rounded-full transition-colors duration-200 ${
+                variant === v
+                  ? "bg-[#C9A86C] text-[#0A0A0A]"
+                  : "text-[#8A8A85] hover:text-[#F5F5F0]"
+              }`}
+              aria-pressed={variant === v}
+            >
+              {v}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <Hero3D scrollRef={scrollRef} />
+      <Hero3D scrollRef={scrollRef} variant={variant} />
 
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_38%,rgba(0,0,0,0.62)_100%)]" />
       </div>
 
       <div className="pointer-events-none absolute bottom-12 left-8 md:left-16 lg:left-24 flex items-center gap-3">
-        <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#333] to-transparent" />
+        <div className="w-px h-12 bg-linear-to-b from-transparent via-[#333] to-transparent" />
         <span className="text-xs tracking-widest uppercase text-[#555]">
           Scroll
         </span>

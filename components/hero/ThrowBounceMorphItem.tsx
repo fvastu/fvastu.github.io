@@ -5,6 +5,10 @@ import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import PremiumMorphCore from "./PremiumMorphCore";
 import OrbitTextRing from "./OrbitTextRing";
+import GlassMorphCore from "./GlassMorphCore";
+import ChromeMorphCore from "./ChromeMorphCore";
+import MatteStoneMorphCore from "./MatteStoneMorphCore";
+import AuroraMorphCore from "./AuroraMorphCore";
 
 /* ----------------------------- helpers ----------------------------- */
 function damp(current: number, target: number, lambda: number, dt: number) {
@@ -23,8 +27,10 @@ function damp3(
 
 export default function ThrowBounceMorphItem({
   scrollRef,
+  variant = "premium",
 }: {
   scrollRef: React.MutableRefObject<number>;
+  variant?: "premium" | "glass" | "chrome" | "stone" | "aurora";
 }) {
   const groupRef = useRef<THREE.Group>(null!);
   const { camera, viewport } = useThree();
@@ -58,6 +64,51 @@ export default function ThrowBounceMorphItem({
 
   const baseScale = 0.66;
   const radius = 1.0 * baseScale * 1.02;
+
+  const Core = () => {
+    switch (variant) {
+      case "glass":
+        return (
+          <GlassMorphCore
+            morphRef={morphRef}
+            pressRef={pressRef}
+            transformRef={transformRef}
+          />
+        );
+      case "chrome":
+        return (
+          <ChromeMorphCore
+            morphRef={morphRef}
+            pressRef={pressRef}
+            transformRef={transformRef}
+          />
+        );
+      case "stone":
+        return (
+          <MatteStoneMorphCore
+            morphRef={morphRef}
+            pressRef={pressRef}
+            transformRef={transformRef}
+          />
+        );
+      case "aurora":
+        return (
+          <AuroraMorphCore
+            morphRef={morphRef}
+            pressRef={pressRef}
+            transformRef={transformRef}
+          />
+        );
+      default:
+        return (
+          <PremiumMorphCore
+            morphRef={morphRef}
+            pressRef={pressRef}
+            transformRef={transformRef}
+          />
+        );
+    }
+  };
 
   const intersectPointerPlane = (e: any) => {
     plane.constant = 0;
@@ -227,11 +278,7 @@ export default function ThrowBounceMorphItem({
         setTimeout(() => (pressTargetRef.current = 0), 120);
       }}
     >
-      <PremiumMorphCore
-        morphRef={morphRef}
-        pressRef={pressRef}
-        transformRef={transformRef}
-      />
+      <Core />
       <OrbitTextRing
         text="I EVOLVE, AS IDEAS"
         radius={1.12}

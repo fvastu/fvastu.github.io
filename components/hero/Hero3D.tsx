@@ -7,8 +7,10 @@ import ThrowBounceMorphItem from "./ThrowBounceMorphItem";
 
 export default function Hero3D({
   scrollRef,
+  variant = "premium",
 }: {
   scrollRef: React.MutableRefObject<number>;
+  variant?: "premium" | "glass" | "chrome" | "stone" | "aurora";
 }) {
   return (
     <div className="absolute inset-0">
@@ -32,7 +34,7 @@ export default function Hero3D({
           color={"#ffffff"}
         />
 
-        <ThrowBounceMorphItem scrollRef={scrollRef} />
+        <ThrowBounceMorphItem scrollRef={scrollRef} variant={variant} />
 
         <Environment preset="city" environmentIntensity={0.24} />
       </Canvas>
