@@ -17,6 +17,7 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
     <motion.section
       style={{ opacity: heroOpacity, scale: heroScale }}
       className="relative h-svh w-full overflow-hidden bg-[#0A0A0A]"
+      id="hero-content"
     >
       <BackgroundGrid />
 
@@ -49,7 +50,7 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
 
       <div className="pointer-events-none absolute bottom-12 left-8 md:left-8 lg:left-64 flex items-center gap-3">
         <div className="relative w-px h-12">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#333] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#333] to-transparent" />
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#C9A86C] shadow-lg"
             initial={{ opacity: 0.6, y: 0 }}

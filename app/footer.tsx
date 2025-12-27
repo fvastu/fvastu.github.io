@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Twitter } from "lucide-react";
 import { siteConfig } from "@/constants/siteConfig";
 
@@ -30,13 +27,7 @@ export default function Footer() {
   };
 
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.4 }}
-      className="border-t border-[#1A1A1A] bg-[#0A0A0A]"
-    >
+    <footer className="border-t border-[#1A1A1A] bg-[#0A0A0A]">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-[1370px] px-8 md:px-16 lg:px-24 xl:px-32 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
@@ -128,6 +119,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

@@ -57,18 +57,20 @@ export default function LoaderManager({
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.9, ease: "easeInOut" }}
-          >
-            <LoaderComponent />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div data-loader-wrapper>
+        <AnimatePresence mode="wait">
+          {isLoading && (
+            <motion.div
+              key="loader"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.9, ease: "easeInOut" }}
+            >
+              <LoaderComponent />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
       <TransitionEffect isActive={showContent} type={transitionType}>
         {children}
       </TransitionEffect>

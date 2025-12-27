@@ -6,6 +6,7 @@ import Footer from "./footer";
 import { siteConfig } from "@/constants/siteConfig";
 import LoaderManager from "@/components/LoaderManager";
 import { pageConfig } from "@/constants/pageConfig";
+import NoScriptStyles from "@/components/NoScriptStyles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -98,6 +99,7 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href={siteConfig.url} />
         <meta name="format-detection" content="telephone=no" />
+        <NoScriptStyles />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
