@@ -1,31 +1,32 @@
 {
-  "name": "francescovasturzo",
-  "version": "1.0.0",
-  "type": "module",
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "framer-motion": "latest",
-    "hover-effect": "^1.2.1",
-    "locomotive-scroll": "^4.1.4",
-    "next": "16.0.5",
-    "prop-types": "^15.8.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-ga": "^3.3.1",
-    "sass": "^1.94.2",
-    "swr": "^2.3.7"
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "three": "^0.182.0"
   },
   "devDependencies": {
-    "@types/node": "24.10.1",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "typescript": "5.9.3"
-  },
-  "license": "MIT"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.182.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
