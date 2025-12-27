@@ -33,7 +33,7 @@ export default function ThrowBounceMorphItem({
   variant?: "premium" | "glass" | "chrome" | "stone" | "aurora";
 }) {
   const groupRef = useRef<THREE.Group>(null!);
-  const { camera, viewport } = useThree();
+  const { camera, viewport, size } = useThree();
 
   const morphRef = useRef(0.0);
   const transformRef = useRef(0.0);
@@ -62,7 +62,8 @@ export default function ThrowBounceMorphItem({
   const wallFriction = 0.88;
   const maxSpeed = 10.0;
 
-  const baseScale = 0.66;
+  // Make the object 30% smaller on mobile screens
+  const baseScale = size.width < 768 ? 0.66 * 0.7 : 0.66;
   const radius = 1.0 * baseScale * 1.02;
 
   const Core = () => {
