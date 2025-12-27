@@ -63,36 +63,65 @@ export const pageConfig: {
 
   // Centralized UI defaults
   defaultHeroVariant: "premium",
-  loaderTransitionType: "tv",
+  loaderTransitionType: "slide",
 
   // Centralized UI strings
   strings: {
-    skipLink: "Skip to main content",
-    heroScrollHint: "Scroll",
+    skipLink: "Skip to content",
+    heroScrollHint: "Scroll to discover",
+
     hero: {
-      eyebrow: "Product UI • Systems • Shipping",
+      eyebrow: "Product Design • Interfaces • Delivery",
       title: {
-        line1: "I craft digital",
-        line2: "experiences that",
+        line1: "I turn ideas into",
+        line2: "digital products that",
         emphasis: "matter",
       },
     },
+
     loaderTexts: {
-      spinner: { subtitle: "Crafting digital experiences that matter" },
-      dots: { subtitle: "Calibrating the fine details" },
-      pulse: { subtitle: "Breathing life into the interface" },
-      grid: { subtitle: "Arranging a refined layout" },
-      orbit: { subtitle: "Orchestrating motion and balance" },
-      // Progress loader has multiple inline texts
+      spinner: {
+        subtitle: "Preparing your experience",
+      },
+
+      dots: {
+        subtitle: "Refining every detail",
+      },
+
+      pulse: {
+        subtitle: "Bringing clarity and rhythm",
+      },
+
+      grid: {
+        subtitle: "Creating structure and balance",
+      },
+
+      orbit: {
+        subtitle: "Aligning form and motion",
+      },
+
       progress: {
         title: "Loading",
-        subtitle: "Shaping excellence",
-        status: "Please wait...",
+        subtitle: "Building something thoughtful",
+        status: "Almost ready",
       },
-      morph: { subtitle: "Shaping ideas with intent" },
-      wave: { subtitle: "Harmonizing flow and feel" },
-      particle: { subtitle: "Energizing the experience" },
-      glitch: { title: "LOADING", subtitle: "Initializing systems" },
+
+      morph: {
+        subtitle: "Shaping ideas into products",
+      },
+
+      wave: {
+        subtitle: "Smoothing every interaction",
+      },
+
+      particle: {
+        subtitle: "Adding depth and energy",
+      },
+
+      glitch: {
+        title: "Loading",
+        subtitle: "Getting things ready",
+      },
     },
   },
 };

@@ -109,7 +109,7 @@ export default function Footer() {
       <div className="border-t border-[#1A1A1A]">
         <div className="mx-auto max-w-[1370px] px-8 md:px-16 lg:px-24 xl:px-32 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <span className="text-xs text-[#555] tracking-wider">
-            © {currentYear} — Crafted with intention
+            © {currentYear} - Crafted with intention
           </span>
 
           <div className="flex items-center gap-8">

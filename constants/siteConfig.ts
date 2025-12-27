@@ -19,7 +19,7 @@ export const siteConfig = {
   ],
   author: {
     name: "Francesco Vasturzo",
-    email: "contact@francescovasturzo.com",
+    email: "f.vasturzo@live.it",
     url: "https://fvastu.github.io",
   },
   creator: "Francesco Vasturzo",

@@ -42,16 +42,21 @@ export default function LoaderManager({
   });
 
   useEffect(() => {
-    // Simulate resource loading (fonts, 3D assets, etc.)
-    const timer = setTimeout(() => {
+    const onHeroLoaded = () => {
       setIsLoading(false);
-      // Trigger content reveal after loader fades out
-      setTimeout(() => {
-        setShowContent(true);
-      }, 600);
-    }, 3200);
+      setTimeout(() => setShowContent(true), 600);
+    };
 
-    return () => clearTimeout(timer);
+    // Listen for hero load event
+    window.addEventListener("hero3d-loaded", onHeroLoaded);
+
+    // Fallback: in case event doesn't fire (no async assets), auto-complete after 5s
+    const fallback = setTimeout(onHeroLoaded, 5000);
+
+    return () => {
+      window.removeEventListener("hero3d-loaded", onHeroLoaded);
+      clearTimeout(fallback);
+    };
   }, []);
 
   return (

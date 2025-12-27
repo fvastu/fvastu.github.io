@@ -23,7 +23,7 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
       <div className="pointer-events-none absolute inset-0 z-10">
         <div className="mx-auto grid h-full max-w-[1370px] grid-cols-1 items-center px-8 md:px-16 lg:grid-cols-12 lg:px-24">
           <div className="lg:col-span-7 pt-16 lg:pt-0">
-            <div className="text-xs tracking-[0.22em] uppercase text-[#8A8A85]">
+            <div className="text-xs tracking-[0.22em] uppercase text-[#8A8A85] mb-4">
               {pageConfig.strings.hero.eyebrow}
             </div>
 
@@ -31,8 +31,9 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
               {pageConfig.strings.hero.title.line1}
               <br />
               {pageConfig.strings.hero.title.line2}
-              <br />
+
               <span className="text-[#C9A86C] italic font-light">
+                {" "}
                 {pageConfig.strings.hero.title.emphasis}
               </span>
             </h1>

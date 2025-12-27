@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { Environment, useProgress } from "@react-three/drei";
 import ThrowBounceMorphItem from "./ThrowBounceMorphItem";
 
 export default function Hero3D({
@@ -37,7 +37,20 @@ export default function Hero3D({
         <ThrowBounceMorphItem scrollRef={scrollRef} variant={variant} />
 
         <Environment preset="city" environmentIntensity={0.24} />
+
+        {/* Report loading completion to the app */}
+        <LoadReporter />
       </Canvas>
     </div>
   );
+}
+
+function LoadReporter() {
+  const { active, loaded, total } = useProgress();
+  useEffect(() => {
+    if (!active && loaded === total) {
+      window.dispatchEvent(new CustomEvent("hero3d-loaded"));
+    }
+  }, [active, loaded, total]);
+  return null;
 }
