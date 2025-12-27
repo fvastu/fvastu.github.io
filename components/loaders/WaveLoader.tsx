@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function WaveLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="flex gap-2 items-end">
         {Array.from({ length: 5 }).map((_, i) => (
           <motion.div
@@ -28,7 +29,7 @@ export default function WaveLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Harmonizing details
+        {pageConfig.strings.loaderTexts.wave.subtitle}
       </motion.p>
     </div>
   );

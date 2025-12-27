@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function PulseLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="relative w-32 h-32 flex items-center justify-center">
         {[0, 1, 2].map((i) => (
           <motion.div
@@ -40,7 +41,7 @@ export default function PulseLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Preparing perfection
+        {pageConfig.strings.loaderTexts.pulse.subtitle}
       </motion.p>
     </div>
   );

@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function GlitchLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <motion.div className="relative">
         <motion.div
           className="text-6xl font-light tracking-tight text-[#C9A86C]"
@@ -17,7 +18,7 @@ export default function GlitchLoader() {
             repeatType: "reverse",
           }}
         >
-          LOADING
+          {pageConfig.strings.loaderTexts.glitch.title}
         </motion.div>
         <motion.div
           className="absolute inset-0 text-6xl font-light tracking-tight text-[#8AD9FF]"
@@ -31,7 +32,7 @@ export default function GlitchLoader() {
             repeatDelay: 0.8,
           }}
         >
-          LOADING
+          {pageConfig.strings.loaderTexts.glitch.title}
         </motion.div>
         <motion.div
           className="absolute inset-0 text-6xl font-light tracking-tight text-[#FF88CC]"
@@ -45,7 +46,7 @@ export default function GlitchLoader() {
             repeatDelay: 1,
           }}
         >
-          LOADING
+          {pageConfig.strings.loaderTexts.glitch.title}
         </motion.div>
       </motion.div>
       <motion.p
@@ -54,7 +55,7 @@ export default function GlitchLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Initializing systems
+        {pageConfig.strings.loaderTexts.glitch.subtitle}
       </motion.p>
     </div>
   );

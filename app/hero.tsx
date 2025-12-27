@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import BackgroundGrid from "../components/hero/BackgroundGrid";
 import Hero3D from "../components/hero/Hero3D";
+import { pageConfig } from "@/constants/pageConfig";
 import { useHeroScroll } from "../hooks/useHeroScroll";
 
 const variants = ["premium", "glass", "chrome", "stone", "aurora"] as const;
@@ -12,7 +13,7 @@ type VariantType = (typeof variants)[number];
 
 export default function AgencyHeroMorphThrowWithWrapText_Grid() {
   const { heroOpacity, heroScale, scrollRef } = useHeroScroll();
-  const [variant, setVariant] = useState<VariantType>("chrome");
+  const [variant, setVariant] = useState(pageConfig.defaultHeroVariant);
 
   return (
     <motion.section
@@ -65,7 +66,7 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
       <div className="pointer-events-none absolute bottom-12 left-8 md:left-16 lg:left-24 flex items-center gap-3">
         <div className="w-px h-12 bg-linear-to-b from-transparent via-[#333] to-transparent" />
         <span className="text-xs tracking-widest uppercase text-[#555]">
-          Scroll
+          {pageConfig.strings.heroScrollHint}
         </span>
       </div>
     </motion.section>

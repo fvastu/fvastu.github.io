@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function GridLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="grid grid-cols-3 gap-3">
         {Array.from({ length: 9 }).map((_, i) => (
           <motion.div
@@ -29,7 +30,7 @@ export default function GridLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Assembling elements
+        {pageConfig.strings.loaderTexts.grid.subtitle}
       </motion.p>
     </div>
   );

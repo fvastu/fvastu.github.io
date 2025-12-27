@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function MorphLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <motion.div
         className="w-24 h-24 bg-[#C9A86C]"
         animate={{
@@ -23,7 +24,7 @@ export default function MorphLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Transforming ideas
+        {pageConfig.strings.loaderTexts.morph.subtitle}
       </motion.p>
     </div>
   );

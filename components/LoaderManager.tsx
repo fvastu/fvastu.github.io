@@ -12,6 +12,7 @@ import MorphLoader from "./loaders/MorphLoader";
 import WaveLoader from "./loaders/WaveLoader";
 import ParticleLoader from "./loaders/ParticleLoader";
 import GlitchLoader from "./loaders/GlitchLoader";
+import TransitionEffect, { TransitionType } from "./TransitionEffect";
 
 const loaders = [
   SpinnerLoader,
@@ -28,19 +29,26 @@ const loaders = [
 
 export default function LoaderManager({
   children,
+  transitionType = "tv",
 }: {
   children: React.ReactNode;
+  transitionType?: TransitionType;
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
   const [LoaderComponent] = useState(() => {
     // Pick a random loader on mount
-    return loaders[9];
+    return loaders[Math.floor(Math.random() * loaders.length)];
   });
 
   useEffect(() => {
     // Simulate resource loading (fonts, 3D assets, etc.)
     const timer = setTimeout(() => {
       setIsLoading(false);
+      // Trigger content reveal after loader fades out
+      setTimeout(() => {
+        setShowContent(true);
+      }, 400);
     }, 2800); // Adjust timing as needed
 
     return () => clearTimeout(timer);
@@ -60,13 +68,9 @@ export default function LoaderManager({
           </motion.div>
         )}
       </AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLoading ? 0 : 1 }}
-        transition={{ duration: 0.6, delay: isLoading ? 0 : 0.3 }}
-      >
+      <TransitionEffect isActive={showContent} type={transitionType}>
         {children}
-      </motion.div>
+      </TransitionEffect>
     </>
   );
 }

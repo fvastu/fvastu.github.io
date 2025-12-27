@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function OrbitLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="relative w-32 h-32">
         <motion.div
           className="absolute inset-0"
@@ -42,7 +43,7 @@ export default function OrbitLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Orchestrating magic
+        {pageConfig.strings.loaderTexts.orbit.subtitle}
       </motion.p>
     </div>
   );

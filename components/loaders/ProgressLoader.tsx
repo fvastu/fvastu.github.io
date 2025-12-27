@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function ProgressLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="w-64">
         <div className="h-0.5 bg-[#1A1A1A] rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-[#C9A86C] to-[#FFD28A]"
+            className="h-full bg-linear-to-r from-[#C9A86C] to-[#FFD28A]"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{
@@ -24,12 +25,12 @@ export default function ProgressLoader() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <span>Loading</span>
+          <span>{pageConfig.strings.loaderTexts.progress.title}</span>
           <motion.span
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            Please wait...
+            {pageConfig.strings.loaderTexts.progress.status ?? "Please wait..."}
           </motion.span>
         </motion.div>
       </div>
@@ -39,7 +40,7 @@ export default function ProgressLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        Building excellence
+        {pageConfig.strings.loaderTexts.progress.subtitle}
       </motion.p>
     </div>
   );

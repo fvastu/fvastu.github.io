@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function DotsLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="flex gap-3">
         {[0, 1, 2, 3].map((i) => (
           <motion.div
@@ -29,7 +30,7 @@ export default function DotsLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Loading brilliance
+        {pageConfig.strings.loaderTexts.dots.subtitle}
       </motion.p>
     </div>
   );

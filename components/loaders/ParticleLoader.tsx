@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function ParticleLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <div className="relative w-40 h-40">
         {Array.from({ length: 12 }).map((_, i) => {
           const angle = (i * 360) / 12;
@@ -40,7 +41,7 @@ export default function ParticleLoader() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Energizing experience
+        {pageConfig.strings.loaderTexts.particle.subtitle}
       </motion.p>
     </div>
   );

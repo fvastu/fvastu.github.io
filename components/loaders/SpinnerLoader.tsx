@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { pageConfig } from "@/constants/pageConfig";
 
 export default function SpinnerLoader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-[#0A0A0A]">
       <motion.div
         className="relative w-24 h-24"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -33,7 +34,7 @@ export default function SpinnerLoader() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        Crafting your experience
+        {pageConfig.strings.loaderTexts.spinner.subtitle}
       </motion.p>
     </div>
   );

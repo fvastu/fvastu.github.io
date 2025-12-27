@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import ProjectModal from "@/components/ProjectModal";
 import { Project } from "@/constants/types";
 import { generateStructuredData } from "@/constants/structuredData";
+import { pageConfig } from "@/constants/pageConfig";
 
 const Index = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -22,12 +23,14 @@ const Index = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="bg-[#0A0A0A] text-[#F5F5F0] min-h-screen overflow-x-hidden font-sans antialiased">
-        <AgencyHeroMorphLoopDragOneComponent />
-        <WorkSection onProjectClick={setSelectedProject} />
-        <ApproachSection />
-        <ProcessSection />
-        <ContactSection />
+      <div className={pageConfig.wrapperClass}>
+        {pageConfig.sections.hero && <AgencyHeroMorphLoopDragOneComponent />}
+        {pageConfig.sections.work && (
+          <WorkSection onProjectClick={setSelectedProject} />
+        )}
+        {pageConfig.sections.approach && <ApproachSection />}
+        {pageConfig.sections.process && <ProcessSection />}
+        {pageConfig.sections.contact && <ContactSection />}
         <ProjectModal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
