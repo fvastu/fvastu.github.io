@@ -9,8 +9,6 @@ import { useHeroScroll } from "../hooks/useHeroScroll";
 
 const variants = ["premium", "glass", "chrome", "stone", "aurora"] as const;
 
-type VariantType = (typeof variants)[number];
-
 export default function AgencyHeroMorphThrowWithWrapText_Grid() {
   const { heroOpacity, heroScale, scrollRef } = useHeroScroll();
   const [variant, setVariant] = useState(pageConfig.defaultHeroVariant);
@@ -26,34 +24,19 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
         <div className="mx-auto grid h-full max-w-[1370px] grid-cols-1 items-center px-8 md:px-16 lg:grid-cols-12 lg:px-24">
           <div className="lg:col-span-7 pt-16 lg:pt-0">
             <div className="text-xs tracking-[0.22em] uppercase text-[#8A8A85]">
-              Product UI • Systems • Shipping
+              {pageConfig.strings.hero.eyebrow}
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extralight leading-[0.95] tracking-[-0.03em]">
-              I craft digital
+              {pageConfig.strings.hero.title.line1}
               <br />
-              experiences that
+              {pageConfig.strings.hero.title.line2}
               <br />
-              <span className="text-[#C9A86C] italic font-light">matter</span>
+              <span className="text-[#C9A86C] italic font-light">
+                {pageConfig.strings.hero.title.emphasis}
+              </span>
             </h1>
           </div>
-        </div>
-        {/* Variant Selector */}
-        <div className="pointer-events-auto absolute top-6 right-6 md:right-16 lg:right-24 flex gap-2 bg-[#0A0A0A]/70 backdrop-blur-sm border border-[#1A1A1A] rounded-full px-3 py-2">
-          {variants.map((v) => (
-            <button
-              key={v}
-              onClick={() => setVariant(v)}
-              className={`text-[10px] md:text-xs tracking-[0.15em] uppercase px-2 md:px-3 py-1 rounded-full transition-colors duration-200 ${
-                variant === v
-                  ? "bg-[#C9A86C] text-[#0A0A0A]"
-                  : "text-[#8A8A85] hover:text-[#F5F5F0]"
-              }`}
-              aria-pressed={variant === v}
-            >
-              {v}
-            </button>
-          ))}
         </div>
       </div>
 

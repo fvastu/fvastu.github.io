@@ -31,6 +31,10 @@ export type LoaderName =
 export type PageStrings = {
   skipLink: string;
   heroScrollHint: string;
+  hero: {
+    eyebrow: string;
+    title: { line1: string; line2: string; emphasis: string };
+  };
   loaderTexts: Record<
     LoaderName,
     { title?: string; subtitle?: string; status?: string }
@@ -65,6 +69,14 @@ export const pageConfig: {
   strings: {
     skipLink: "Skip to main content",
     heroScrollHint: "Scroll",
+    hero: {
+      eyebrow: "Product UI • Systems • Shipping",
+      title: {
+        line1: "I craft digital",
+        line2: "experiences that",
+        emphasis: "matter",
+      },
+    },
     loaderTexts: {
       spinner: { subtitle: "Crafting your experience" },
       dots: { subtitle: "Loading brilliance" },
