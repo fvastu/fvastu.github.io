@@ -33,6 +33,14 @@ jobs:
           version: 10
           run_install: false
 
+      - name: Install pnpm globally (fallback)
+        run: npm i -g pnpm@10
+
+      - name: Print versions
+        run: |
+          node -v
+          pnpm -v
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
