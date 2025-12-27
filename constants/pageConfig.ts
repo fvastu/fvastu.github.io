@@ -84,7 +84,11 @@ export const pageConfig: {
       grid: { subtitle: "Arranging a refined layout" },
       orbit: { subtitle: "Orchestrating motion and balance" },
       // Progress loader has multiple inline texts
-      progress: { title: "Loading", subtitle: "Shaping excellence", status: "Please wait..." },
+      progress: {
+        title: "Loading",
+        subtitle: "Shaping excellence",
+        status: "Please wait...",
+      },
       morph: { subtitle: "Shaping ideas with intent" },
       wave: { subtitle: "Harmonizing flow and feel" },
       particle: { subtitle: "Energizing the experience" },
