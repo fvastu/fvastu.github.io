@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./header";
 import Footer from "./footer";
 import { siteConfig } from "@/constants/siteConfig";
+import LoaderManager from "@/components/LoaderManager";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,15 +101,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-[#C9A86C] focus:text-[#0A0A0A]"
-        >
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <LoaderManager>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-[#C9A86C] focus:text-[#0A0A0A]"
+          >
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </LoaderManager>
       </body>
     </html>
   );
