@@ -26,7 +26,7 @@ export default function TransitionEffect({
     fade: {
       initial: { opacity: 0 },
       animate: { opacity: 1 },
-      transition: { duration: 0.8, ease: "easeInOut" as const },
+      transition: { duration: 1.2, ease: "easeInOut" as const },
     },
     tv: {
       initial: {
@@ -40,7 +40,7 @@ export default function TransitionEffect({
         scaleY: 1,
       },
       transition: {
-        duration: 0.6,
+        duration: 1.2,
         ease: [0.23, 1, 0.32, 1] as const,
       },
     },
@@ -54,7 +54,7 @@ export default function TransitionEffect({
         y: 0,
       },
       transition: {
-        duration: 0.7,
+        duration: 1.1,
         ease: [0.22, 1, 0.36, 1] as const,
       },
     },
@@ -70,7 +70,7 @@ export default function TransitionEffect({
         filter: "blur(0px)",
       },
       transition: {
-        duration: 0.8,
+        duration: 1.2,
         ease: "easeOut" as const,
       },
     },
@@ -82,7 +82,7 @@ export default function TransitionEffect({
         clipPath: "inset(0 0% 0 0%)",
       },
       transition: {
-        duration: 0.9,
+        duration: 1.4,
         ease: [0.22, 1, 0.36, 1] as const,
       },
     },
@@ -94,7 +94,7 @@ export default function TransitionEffect({
         clipPath: "inset(0 0 0% 0)",
       },
       transition: {
-        duration: 0.7,
+        duration: 1.0,
         ease: [0.22, 1, 0.36, 1] as const,
       },
     },
@@ -118,7 +118,7 @@ export default function TransitionEffect({
           className="fixed inset-0 z-9998 pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 0.15, 0] }}
-          transition={{ duration: 0.3, times: [0, 0.5, 1] }}
+          transition={{ duration: 0.5, times: [0, 0.5, 1] }}
         >
           <div className="absolute inset-0 bg-white" />
         </motion.div>

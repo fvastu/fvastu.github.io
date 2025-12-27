@@ -48,8 +48,8 @@ export default function LoaderManager({
       // Trigger content reveal after loader fades out
       setTimeout(() => {
         setShowContent(true);
-      }, 400);
-    }, 2800); // Adjust timing as needed
+      }, 600);
+    }, 3200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -62,7 +62,7 @@ export default function LoaderManager({
             key="loader"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
           >
             <LoaderComponent />
           </motion.div>
