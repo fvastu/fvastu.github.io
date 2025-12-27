@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Block access to specific files
+Disallow: /api/
+Disallow: /_next/static/
+
+# Crawl-delay (optional, adjust as needed)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://fvastu.github.io/sitemap.xml

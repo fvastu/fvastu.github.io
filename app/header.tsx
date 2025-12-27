@@ -18,8 +18,8 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: "Work", href: "#projects" },
-    { label: "Approach", href: "#approach" },
+    { label: "Work", href: "#work" },
+    { label: "About", href: "#about" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
   ];
@@ -35,12 +35,17 @@ export default function Header() {
             ? "bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-[#1A1A1A]"
             : "bg-transparent"
         }`}
+        role="banner"
       >
-        <nav className="px-8 md:px-16 lg:px-24 xl:px-32 py-6 flex items-center justify-between">
+        <nav
+          className="px-8 md:px-16 lg:px-24 xl:px-32 py-6 flex items-center justify-between"
+          aria-label="Main navigation"
+        >
           {/* Logo */}
           <a
             href="#"
             className="text-xl font-light tracking-tight hover:text-[#C9A86C] transition-colors duration-300"
+            aria-label="Home"
           >
             Portfolio
           </a>
@@ -59,7 +64,10 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <button className="hidden md:block px-6 py-3 border border-[#2A2A2A] rounded-full text-xs tracking-[0.15em] uppercase hover:border-[#C9A86C] hover:text-[#C9A86C] transition-all duration-300">
+          <button
+            className="hidden md:block px-6 py-3 border border-[#2A2A2A] rounded-full text-xs tracking-[0.15em] uppercase hover:border-[#C9A86C] hover:text-[#C9A86C] transition-all duration-300"
+            aria-label="Contact me"
+          >
             Let's talk
           </button>
 
@@ -67,6 +75,8 @@ export default function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-[#2A2A2A] hover:border-[#C9A86C] transition-colors duration-300"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5" />
