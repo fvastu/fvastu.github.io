@@ -31,14 +31,12 @@ export default function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-[#1A1A1A]"
-            : "bg-transparent"
+          isScrolled ? "bg-[#0A0A0A]/80 backdrop-blur-xl" : "bg-transparent"
         }`}
         role="banner"
       >
         <nav
-          className="px-8 md:px-16 lg:px-24 xl:px-32 py-6 flex items-center justify-between"
+          className="mx-auto max-w-[1370px] px-8 md:px-16 lg:px-24 xl:px-32 py-6 flex items-center justify-between"
           aria-label="Main navigation"
         >
           {/* Logo */}

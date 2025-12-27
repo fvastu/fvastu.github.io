@@ -12,7 +12,7 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
   return (
     <motion.section
       style={{ opacity: heroOpacity, scale: heroScale }}
-      className="relative h-[100svh] w-full overflow-hidden bg-[#0A0A0A]"
+      className="relative h-svh w-full overflow-hidden bg-[#0A0A0A]"
     >
       <BackgroundGrid />
 

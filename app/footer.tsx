@@ -38,7 +38,7 @@ export default function Footer() {
       className="border-t border-[#1A1A1A] bg-[#0A0A0A]"
     >
       {/* Main Footer Content */}
-      <div className="px-8 md:px-16 lg:px-24 xl:px-32 py-16 md:py-24">
+      <div className="mx-auto max-w-[1370px] px-8 md:px-16 lg:px-24 xl:px-32 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Brand & Description */}
           <div className="lg:col-span-5">
@@ -106,8 +106,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#1A1A1A] px-8 md:px-16 lg:px-24 xl:px-32 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="border-t border-[#1A1A1A]">
+        <div className="mx-auto max-w-[1370px] px-8 md:px-16 lg:px-24 xl:px-32 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <span className="text-xs text-[#555] tracking-wider">
             © {currentYear} — Crafted with intention
           </span>
