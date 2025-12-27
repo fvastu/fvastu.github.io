@@ -7,10 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   output: "export",
-  eslint: {
-    // Avoid blocking builds due to lint in CI; run lint separately
-    ignoreDuringBuilds: true,
-  },
 };
 
 export default nextConfig;
