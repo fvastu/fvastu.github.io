@@ -85,4 +85,35 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=1200&h=800&fit=crop",
     website: "https://odino.vercel.app",
   },
+  {
+    name: "Personal Portfolio Website",
+    description:
+      "A modern, responsive personal portfolio website featuring animated components, work showcase, and content management through MDX.",
+    tech: "Next.js, TypeScript, Contentlayer",
+    outcome: "Production personal website with CMS",
+    problem:
+      "Needed a professional online presence that could showcase projects and skills while being easy to maintain and update. Traditional static sites were hard to update, while CMS platforms were too heavy for a personal portfolio.",
+    solution:
+      "Built a modern portfolio using Next.js 13 with TypeScript and Tailwind CSS. Implemented MDX-based content management with Contentlayer for easy updates without a database. Added dark/light theme switching, Framer Motion animations for engaging UX, and integrated EmailJS for contact functionality. The site features automatic sitemap and RSS feed generation, SEO optimization, and Vercel Analytics integration. Used tile-based work showcase for interactive project display.",
+    techStack: [
+      "Next.js 13",
+      "TypeScript",
+      "React 18",
+      "Tailwind CSS",
+      "Contentlayer",
+      "MDX Bundler",
+      "Framer Motion",
+      "React Hook Form",
+      "EmailJS",
+      "next-themes",
+    ],
+    metrics: [
+      "MDX-based content management",
+      "Dark/Light theme support",
+      "SEO optimized with sitemap/RSS",
+    ],
+    mockup:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
+    website: "https://fvasturzo.it",
+  },
 ];
