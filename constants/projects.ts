@@ -20,12 +20,6 @@ export const projects: Project[] = [
       "Brevo",
       "PostgreSQL",
     ],
-    testimonial: {
-      quote:
-        "This platform turned our scattered innovation insights into dependable intelligence we can actually act on.",
-      author: "Innovation Leader",
-      role: "Strategic Partner",
-    },
     metrics: [
       "Domain-verified partner authentication",
       "Structured assessment framework",
@@ -56,12 +50,6 @@ export const projects: Project[] = [
       "Zod",
       "Vitest",
     ],
-    testimonial: {
-      quote:
-        "AgentIA's semantic search found exactly what I needed in seconds. The multilingual experience is flawless.",
-      author: "Product Manager",
-      role: "Enterprise Client",
-    },
     metrics: [
       "ML-powered semantic search",
       "Full i18n support (EN/IT)",

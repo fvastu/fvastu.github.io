@@ -6,7 +6,7 @@ export type Project = {
   problem: string;
   solution: string;
   techStack: string[];
-  testimonial: { quote: string; author: string; role: string };
+  testimonial?: { quote: string; author: string; role: string };
   metrics: string[];
   mockup: string;
 };

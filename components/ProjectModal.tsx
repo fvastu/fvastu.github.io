@@ -129,34 +129,36 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           </div>
 
-          <div className="border-t border-[#1A1A1A] pt-8">
-            <span className="text-xs tracking-widest uppercase text-[#555]">
-              Client Feedback
-            </span>
-            <blockquote className="mt-6 p-6 md:p-8 border-l-2 border-[#C9A86C] bg-[#0F0F0F]">
-              <p className="text-lg md:text-xl font-light leading-relaxed text-[#F5F5F0]">
-                "{project.testimonial.quote}"
-              </p>
-              <footer className="mt-4 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center">
-                  <span className="text-sm font-medium text-[#C9A86C]">
-                    {project.testimonial.author
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
-                </div>
-                <div>
-                  <p className="text-sm font-medium">
-                    {project.testimonial.author}
-                  </p>
-                  <p className="text-xs text-[#555]">
-                    {project.testimonial.role}
-                  </p>
-                </div>
-              </footer>
-            </blockquote>
-          </div>
+          {project.testimonial && (
+            <div className="border-t border-[#1A1A1A] pt-8">
+              <span className="text-xs tracking-widest uppercase text-[#555]">
+                Client Feedback
+              </span>
+              <blockquote className="mt-6 p-6 md:p-8 border-l-2 border-[#C9A86C] bg-[#0F0F0F]">
+                <p className="text-lg md:text-xl font-light leading-relaxed text-[#F5F5F0]">
+                  "{project.testimonial.quote}"
+                </p>
+                <footer className="mt-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center">
+                    <span className="text-sm font-medium text-[#C9A86C]">
+                      {project.testimonial.author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">
+                      {project.testimonial.author}
+                    </p>
+                    <p className="text-xs text-[#555]">
+                      {project.testimonial.role}
+                    </p>
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>
