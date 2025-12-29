@@ -9,6 +9,7 @@ export type Project = {
   testimonial?: { quote: string; author: string; role: string };
   metrics: string[];
   mockup: string;
+  website?: string;
 };
 
 export type ProcessStep = {

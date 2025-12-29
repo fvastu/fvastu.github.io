@@ -58,4 +58,31 @@ export const projects: Project[] = [
     mockup:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
   },
+  {
+    name: "Odino",
+    description:
+      "A privacy-focused Chrome extension with a production-ready landing page that blocks trackers and verifies protection in real-time.",
+    tech: "Chrome Extension API, Next.js, React",
+    outcome: "Complete privacy protection solution",
+    problem:
+      "Users lacked real-time visibility into trackers and had no way to verify their privacy protection was working. Existing solutions were either too technical or didn't provide transparent feedback on what was being blocked.",
+    solution:
+      "Developed a full-stack privacy solution consisting of a Chrome extension that actively blocks trackers with real-time verification, paired with a modern landing page built on Next.js 16 and React 19. The landing page features comprehensive SEO optimization, responsive navigation with Framer Motion animations, and production-ready features including security headers, accessibility support, and performance optimizations. Implemented full metadata strategy with Open Graph tags, Twitter cards, and JSON-LD structured data.",
+    techStack: [
+      "Chrome Extension API",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Framer Motion",
+    ],
+    metrics: [
+      "Real-time tracker blocking",
+      "Full SEO & metadata implementation",
+      "Production-ready with security headers",
+    ],
+    mockup:
+      "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=1200&h=800&fit=crop",
+    website: "https://odino-website.vercel.app",
+  },
 ];
