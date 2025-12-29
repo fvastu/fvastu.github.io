@@ -83,6 +83,6 @@ export const projects: Project[] = [
     ],
     mockup:
       "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=1200&h=800&fit=crop",
-    website: "https://odino-website.vercel.app",
+    website: "https://odino.vercel.app",
   },
 ];
