@@ -16,3 +16,15 @@ export type ProcessStep = {
   title: string;
   desc: string;
 };
+
+export type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  duration: string;
+  location: string;
+  description: string;
+  achievements: string[];
+  skills: string[];
+  logo?: string;
+};

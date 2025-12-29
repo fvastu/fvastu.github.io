@@ -6,6 +6,7 @@ import ContactSection from "@/components/ContactSection";
 import { generateStructuredData } from "@/constants/structuredData";
 import { pageConfig } from "@/constants/pageConfig";
 import ClientPageWrapper from "@/components/ClientPageWrapper";
+import ExperienceSection4 from "@/components/ExperienceSection4";
 
 export default function Index() {
   const structuredData = generateStructuredData();
@@ -21,6 +22,7 @@ export default function Index() {
         {pageConfig.sections.hero && <AgencyHeroMorphLoopDragOneComponent />}
         <ClientPageWrapper />
         {pageConfig.sections.approach && <ApproachSection />}
+        <ExperienceSection4 />
         {pageConfig.sections.process && <ProcessSection />}
         {pageConfig.sections.contact && <ContactSection />}
       </div>
