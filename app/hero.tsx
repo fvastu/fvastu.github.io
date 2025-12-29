@@ -48,13 +48,18 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_38%,rgba(0,0,0,0.62)_100%)]" />
       </div>
 
-      <div className="pointer-events-none absolute bottom-12 left-8 md:left-8 lg:left-64 flex items-center gap-3">
-        <div className="relative w-px h-12">
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#333] to-transparent" />
+      <motion.div
+        className="pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="relative w-px h-14">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#666] to-transparent" />
           <motion.div
-            className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#C9A86C] shadow-lg"
+            className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#C9A86C] shadow-[0_0_12px_rgba(201,168,108,0.6)]"
             initial={{ opacity: 0.6, y: 0 }}
-            animate={{ opacity: [0.6, 1, 0.6], y: [0, 40, 0] }}
+            animate={{ opacity: [0.6, 1, 0.6], y: [0, 44, 0] }}
             transition={{
               duration: 2,
               repeat: Infinity,
@@ -62,10 +67,10 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
             }}
           />
         </div>
-        <span className="text-xs tracking-widest uppercase text-[#555]">
+        <span className="text-xs tracking-widest uppercase text-[#999] font-light">
           {pageConfig.strings.heroScrollHint}
         </span>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
