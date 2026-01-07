@@ -114,6 +114,6 @@ export const projects: Project[] = [
     ],
     mockup:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
-    website: "https://fvasturzo.it",
+    website: "https://fvasturzo.netlify.app",
   },
 ];
