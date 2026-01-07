@@ -32,6 +32,11 @@ export default function ThrowBounceMorphItem({
   scrollRef: React.MutableRefObject<number>;
   variant?: "premium" | "glass" | "chrome" | "stone" | "aurora";
 }) {
+  // Mobile detection
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(max-width: 767px)").matches;
   const groupRef = useRef<THREE.Group>(null!);
   const { camera, viewport, size } = useThree();
 
@@ -57,9 +62,10 @@ export default function ThrowBounceMorphItem({
 
   const rot = useRef({ x: 0, y: 0, tx: 0, ty: 0 });
 
-  const restitution = 0.8;
-  const linearDrag = 0.32;
-  const wallFriction = 0.88;
+  // BOUNCE & SOFTNESS TUNING
+  const restitution = 0.92; // more bounce
+  const linearDrag = 0.22; // less drag, more glide
+  const wallFriction = 0.93; // less friction, more bounce
   const maxSpeed = 10.0;
 
   // Make the object 30% smaller on mobile screens
@@ -117,6 +123,10 @@ export default function ThrowBounceMorphItem({
     return hit.clone();
   };
 
+  // For mobile: smooth random movement
+  const mobileTargetDir = useRef(new THREE.Vector2(1, 0));
+  const mobileTargetSpeed = useRef(1.5);
+  const mobileChangeTimer = useRef(0);
   useFrame((state, dt) => {
     const t = state.clock.elapsedTime;
 
@@ -157,6 +167,23 @@ export default function ThrowBounceMorphItem({
     const maxY = halfH - radius;
 
     if (!dragging.current) {
+      if (isMobile) {
+        // Change direction and speed smoothly every 1.2-2.2s
+        mobileChangeTimer.current -= dt;
+        if (mobileChangeTimer.current <= 0) {
+          const angle = Math.random() * Math.PI * 2;
+          mobileTargetDir.current.set(Math.cos(angle), Math.sin(angle));
+          mobileTargetSpeed.current = 0.7 + Math.random() * 1.7;
+          mobileChangeTimer.current = 1.2 + Math.random() * 1.0;
+        }
+        // Smoothly interpolate velocity toward target direction and speed
+        const targetVel = mobileTargetDir.current
+          .clone()
+          .multiplyScalar(mobileTargetSpeed.current);
+        // Softer, more organic interpolation
+        vel.current.x = damp(vel.current.x, targetVel.x, 0.7, dt);
+        vel.current.y = damp(vel.current.y, targetVel.y, 0.7, dt);
+      }
       pos.current.x += vel.current.x * dt;
       pos.current.y += vel.current.y * dt;
 
@@ -185,7 +212,8 @@ export default function ThrowBounceMorphItem({
       }
 
       const speed = Math.hypot(vel.current.x, vel.current.y);
-      if (speed < 0.25) {
+      if (speed < 0.25 && !isMobile) {
+        // Only anchor to corner if not mobile (mobile: always move)
         const anchor = new THREE.Vector3(
           halfW - radius - 0.6,
           -halfH + radius + 0.55,
