@@ -32,14 +32,15 @@ export default function ContactSection() {
         </motion.p>
 
         <motion.div variants={fadeInUp} className="mt-12">
-          <button
-            className="group relative px-10 py-5 bg-[#C9A86C] rounded-full overflow-hidden transition-all duration-500 hover:bg-[#D4B87A]"
-            aria-label="Contact Francesco Vasturzo"
+          <a
+            href="mailto:f.vasturzo@live.it?subject=Project Inquiry"
+            className="group relative inline-block px-10 py-5 bg-[#C9A86C] rounded-full overflow-hidden transition-all duration-500 hover:bg-[#D4B87A]"
+            aria-label="Contact Francesco Vasturzo via email"
           >
             <span className="relative z-10 text-sm tracking-widest uppercase font-medium text-[#0A0A0A]">
               Get in touch
             </span>
-          </button>
+          </a>
         </motion.div>
       </motion.div>
     </Section>

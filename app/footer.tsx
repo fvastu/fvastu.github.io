@@ -82,7 +82,10 @@ export default function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-[#8A8A85] hover:text-[#F5F5F0] transition-colors duration-300 group"
+                    aria-label={`Visit ${link.label} profile`}
                   >
                     <div className="w-8 h-8 rounded-full border border-[#2A2A2A] flex items-center justify-center group-hover:border-[#C9A86C] transition-colors duration-300">
                       <Icon className="w-4 h-4" />
@@ -103,20 +106,9 @@ export default function Footer() {
             © {currentYear} - Crafted with intention
           </span>
 
-          <div className="flex items-center gap-8">
-            <a
-              href="#"
-              className="text-xs text-[#555] hover:text-[#C9A86C] transition-colors duration-300 tracking-wider"
-            >
-              Privacy
-            </a>
-            <a
-              href="#"
-              className="text-xs text-[#555] hover:text-[#C9A86C] transition-colors duration-300 tracking-wider"
-            >
-              Terms
-            </a>
-          </div>
+          <span className="text-xs text-[#555] tracking-wider">
+            All rights reserved
+          </span>
         </div>
       </div>
     </footer>

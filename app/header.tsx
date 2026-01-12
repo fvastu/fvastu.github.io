@@ -62,12 +62,13 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <button
+          <a
+            href="mailto:f.vasturzo@live.it?subject=Let's Talk"
             className="hidden md:block px-6 py-3 border border-[#2A2A2A] rounded-full text-xs tracking-[0.15em] uppercase hover:border-[#C9A86C] hover:text-[#C9A86C] transition-all duration-300"
-            aria-label="Contact me"
+            aria-label="Contact me via email"
           >
             Let's talk
-          </button>
+          </a>
 
           {/* Mobile Menu Button */}
           <button
