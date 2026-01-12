@@ -88,27 +88,26 @@ export const projects: Project[] = [
   {
     name: "Personal Portfolio Website",
     description:
-      "A modern, responsive personal portfolio website featuring animated components, work showcase, and content management through MDX.",
-    tech: "Next.js, TypeScript, Contentlayer",
+      "A modern, responsive personal portfolio website featuring animated components, work showcase, and content management through Sanity CMS.",
+    tech: "Next.js, TypeScript, Sanity CMS",
     outcome: "Production personal website with CMS",
     problem:
       "Needed a professional online presence that could showcase projects and skills while being easy to maintain and update. Traditional static sites were hard to update, while CMS platforms were too heavy for a personal portfolio.",
     solution:
-      "Built a portfolio with MDX-based content management, theme switching, animations, and SEO optimization.",
+      "Built a portfolio with Sanity CMS-based content management, theme switching, animations, and SEO optimization.",
     techStack: [
       "Next.js 13",
       "TypeScript",
       "React 18",
       "Tailwind CSS",
-      "Contentlayer",
-      "MDX Bundler",
+      "Sanity CMS",
       "Framer Motion",
       "React Hook Form",
       "EmailJS",
       "next-themes",
     ],
     metrics: [
-      "MDX-based content management",
+      "Sanity CMS content management",
       "Dark/Light theme support",
       "SEO optimized with sitemap/RSS",
     ],
