@@ -10,7 +10,7 @@ export const projects: Project[] = [
     problem:
       "Innovation teams struggled with unreliable partner signals and subjective inputs that couldn't drive strategic decisions. Traditional reporting was static and disconnected from actionable intelligence.",
     solution:
-      "Built a comprehensive platform that validates partner identity via email domain matching, guides users through structured assessments, and generates dynamic reports with pillar summaries and actionable next steps. The approval pipeline ensures trustworthy data while maintaining a simple experience for contributors.",
+      "Built a platform to validate partner identity, guide users through structured assessments, and generate dynamic reports with actionable insights.",
     techStack: [
       "Next.js 16",
       "TypeScript",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     problem:
       "Finding the right AI agent from hundreds of options was overwhelming and time-consuming. Users needed intelligent search that understood intent, not just keywords, while supporting multiple languages and regions.",
     solution:
-      "Built a sophisticated marketplace using machine learning embeddings for semantic search that truly understands user needs. Integrated full internationalization for English and Italian, a smart shopping cart system, and security features like Cloudflare Turnstile. The platform transforms agent discovery from manual browsing into intelligent recommendations.",
+      "Developed a marketplace with ML-powered semantic search, full i18n, and a smart shopping cart for easy agent discovery.",
     techStack: [
       "Next.js 16",
       "TypeScript",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     problem:
       "Users lacked real-time visibility into trackers and had no way to verify their privacy protection was working. Existing solutions were either too technical or didn't provide transparent feedback on what was being blocked.",
     solution:
-      "Developed a full-stack privacy solution consisting of a Chrome extension that actively blocks trackers with real-time verification, paired with a modern landing page built on Next.js 16 and React 19. The landing page features comprehensive SEO optimization, responsive navigation with Framer Motion animations, and production-ready features including security headers, accessibility support, and performance optimizations. Implemented full metadata strategy with Open Graph tags, Twitter cards, and JSON-LD structured data.",
+      "Created a Chrome extension for real-time tracker blocking and a modern landing page with full SEO and security features.",
     techStack: [
       "Chrome Extension API",
       "Next.js 16",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     problem:
       "Needed a professional online presence that could showcase projects and skills while being easy to maintain and update. Traditional static sites were hard to update, while CMS platforms were too heavy for a personal portfolio.",
     solution:
-      "Built a modern portfolio using Next.js 13 with TypeScript and Tailwind CSS. Implemented MDX-based content management with Contentlayer for easy updates without a database. Added dark/light theme switching, Framer Motion animations for engaging UX, and integrated EmailJS for contact functionality. The site features automatic sitemap and RSS feed generation, SEO optimization, and Vercel Analytics integration. Used tile-based work showcase for interactive project display.",
+      "Built a portfolio with MDX-based content management, theme switching, animations, and SEO optimization.",
     techStack: [
       "Next.js 13",
       "TypeScript",
