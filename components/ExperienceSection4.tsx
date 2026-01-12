@@ -56,6 +56,11 @@ export default function ExperienceSection4() {
                     {exp.role}
                   </h3>
                   <p className="text-sm text-[#8A8A85]">{exp.company}</p>
+                  {exp.description && (
+                    <p className="text-sm text-[#b3b3b3] mt-2">
+                      {exp.description}
+                    </p>
+                  )}
                 </div>
 
                 {/* Duration */}
@@ -89,7 +94,7 @@ export default function ExperienceSection4() {
           <div className="relative grid grid-cols-2 md:grid-cols-4 gap-12 py-16">
             <div className="text-center space-y-3">
               <div className="text-5xl font-light">
-                5<span className="text-[#D4AF37]">+</span>
+                7<span className="text-[#D4AF37]">+</span>
               </div>
               <div className="text-xs text-[#4A4A4A] uppercase tracking-widest">
                 Years

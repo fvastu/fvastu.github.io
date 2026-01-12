@@ -2,9 +2,37 @@ import { Experience } from "./types";
 
 export const experiences: Experience[] = [
   {
-    company: "Prima",
+    company: "Hostaway",
+    companyWebsite: "https://www.hostaway.com/",
     role: "Senior Software Engineer",
-    period: "Oct 2023 - Present",
+    period: "Jan 2026 - Present",
+    duration: "Current",
+    location: "Remote",
+    description:
+      "Deploying AI solutions to enhance property management platform capabilities for vacation rental businesses.",
+    achievements: [
+      "Developed multi-market B2C web applications (Italy, UK, Spain) serving 500K+ monthly users using Next.js, Sanity CMS, and internal design system",
+      "Designed and implemented data ingestion pipeline using Kafka, Databricks, and Next.js, increasing marketing ROI through improved user profiling",
+      "Increased user engagement through A/B testing (LaunchDarkly), improved search with Algolia, and enhanced SEO performance",
+      "Improved Core Web Vitals by 50% through code-splitting, lazy loading, image optimization, and accessibility enhancements",
+      "Mentored junior engineers on modern frontend practices and cross-functional collaboration",
+    ],
+    skills: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Sanity CMS",
+      "Kafka",
+      "Databricks",
+      "LaunchDarkly",
+      "Algolia",
+    ],
+  },
+  {
+    company: "Prima",
+    companyWebsite: "https://prima.it/",
+    role: "Senior Software Engineer",
+    period: "Oct 2023 - Jan 2026",
     duration: "2 yrs 3 mos",
     location: "Remote",
     description:
@@ -29,6 +57,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Ermes Browser Security",
+    companyWebsite: "https://ermes.company/",
     role: "Senior Software Engineer",
     period: "Dec 2021 - Oct 2023",
     duration: "1 yr 11 mos",
@@ -51,6 +80,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Leonardo",
+    companyWebsite: "https://www.leonardocompany.com/",
     role: "Software Engineer",
     period: "May 2019 - Dec 2021",
     duration: "2 yrs 8 mos",

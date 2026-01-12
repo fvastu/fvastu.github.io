@@ -20,6 +20,7 @@ export type ProcessStep = {
 
 export type Experience = {
   company: string;
+  companyWebsite: string;
   role: string;
   period: string;
   duration: string;
