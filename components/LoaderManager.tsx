@@ -30,13 +30,12 @@ export default function LoaderManager({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
-  const [LoaderComponent] = useState(() => {
-    // Pick a random loader on mount
-    return loaders[Math.floor(Math.random() * loaders.length)];
-  });
 
   useEffect(() => {
+    // Pick a random loader only on client side to avoid hydration mismatch);
+    
     const onHeroLoaded = () => {
+      console.log("onHeroLoaded triggered");
       setTimeout(() => {
         setIsLoading(false);
         setShowContent(true);
@@ -54,6 +53,7 @@ export default function LoaderManager({
       clearTimeout(fallback);
     };
   }, []);
+  const LoaderComponent = loaders[0]; // Always use the first loader to avoid hydration issues
 
   return (
     <>

@@ -49,6 +49,7 @@ function LoadReporter() {
   const { active, loaded, total } = useProgress();
   useEffect(() => {
     if (!active && loaded === total) {
+      console.log("Hero3D loaded successfully");
       window.dispatchEvent(new CustomEvent("hero3d-loaded"));
     }
   }, [active, loaded, total]);

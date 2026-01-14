@@ -56,7 +56,7 @@ export const projects: Project[] = [
       "Comprehensive test coverage",
     ],
     mockup:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
+      "/projects/agentia-preview.jpg",
   },
   {
     name: "Odino",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "Production-ready with security headers",
     ],
     mockup:
-      "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=1200&h=800&fit=crop",
+      "/projects/odino-preview.jpg",
     website: "https://odino.vercel.app",
   },
   {
@@ -112,7 +112,7 @@ export const projects: Project[] = [
       "SEO optimized with sitemap/RSS",
     ],
     mockup:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
+      "/projects/old-portfolio-preview.jpg",
     website: "https://fvasturzo.netlify.app",
   },
 ];

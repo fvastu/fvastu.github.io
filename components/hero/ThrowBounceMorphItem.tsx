@@ -4,7 +4,6 @@ import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import PremiumMorphCore from "./PremiumMorphCore";
-import OrbitTextRing from "./OrbitTextRing";
 import GlassMorphCore from "./GlassMorphCore";
 import ChromeMorphCore from "./ChromeMorphCore";
 import MatteStoneMorphCore from "./MatteStoneMorphCore";
@@ -308,14 +307,6 @@ export default function ThrowBounceMorphItem({
       }}
     >
       <Core />
-      <OrbitTextRing
-        text="I EVOLVE, AS IDEAS"
-        radius={1.12}
-        y={0.0}
-        fontSize={0.082}
-        opacity={0.42}
-        rotationSpeed={0.03}
-      />
     </group>
   );
 }

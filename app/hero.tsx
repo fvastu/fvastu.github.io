@@ -11,7 +11,6 @@ const variants = ["premium", "glass", "chrome", "stone", "aurora"] as const;
 
 export default function AgencyHeroMorphThrowWithWrapText_Grid() {
   const { heroOpacity, heroScale, scrollRef } = useHeroScroll();
-  const [variant, setVariant] = useState(pageConfig.defaultHeroVariant);
 
   return (
     <motion.section
@@ -42,7 +41,7 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
         </div>
       </div>
 
-      <Hero3D scrollRef={scrollRef} variant={variant} />
+      <Hero3D scrollRef={scrollRef} variant={pageConfig.defaultHeroVariant} />
 
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_38%,rgba(0,0,0,0.62)_100%)]" />
