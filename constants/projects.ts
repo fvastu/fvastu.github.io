@@ -26,7 +26,7 @@ export const projects: Project[] = [
       "Dynamic reporting dashboards",
     ],
     mockup:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+      "/projects/global-work-innovation-preview.jpg",
   },
   {
     name: "AgentIA",
