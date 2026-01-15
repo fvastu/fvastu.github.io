@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import BackgroundGrid from "../components/hero/BackgroundGrid";
 import Hero3D from "../components/hero/Hero3D";
 import { pageConfig } from "@/constants/pageConfig";
 import { useHeroScroll } from "../hooks/useHeroScroll";
-
-const variants = ["premium", "glass", "chrome", "stone", "aurora"] as const;
 
 export default function AgencyHeroMorphThrowWithWrapText_Grid() {
   const { heroOpacity, heroScale, scrollRef } = useHeroScroll();
@@ -41,7 +38,9 @@ export default function AgencyHeroMorphThrowWithWrapText_Grid() {
         </div>
       </div>
 
-      <Hero3D scrollRef={scrollRef} variant={pageConfig.defaultHeroVariant} />
+      {process.env.NODE_ENV !== "development" && (
+        <Hero3D scrollRef={scrollRef} variant={pageConfig.defaultHeroVariant} />
+      )}
 
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_38%,rgba(0,0,0,0.62)_100%)]" />
