@@ -57,7 +57,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <img
             src={project.mockup}
             alt={project.name}
-            className="w-full h-full object-top object-cover"
+            className={`w-full h-full object-cover ${project.imagePosition === "center" ? "" : " object-top"}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/50 to-transparent" />
           <div className="absolute bottom-8 left-8 md:left-12">

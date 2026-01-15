@@ -10,6 +10,7 @@ export type Project = {
   metrics: string[];
   mockup: string;
   website?: string;
+  imagePosition?: "top" | "center";
 };
 
 export type ProcessStep = {

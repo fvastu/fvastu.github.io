@@ -27,6 +27,7 @@ export const projects: Project[] = [
     ],
     mockup:
       "/projects/global-work-innovation-preview.jpg",
+    imagePosition: "top"
   },
   {
     name: "AgentIA",
@@ -57,6 +58,7 @@ export const projects: Project[] = [
     ],
     mockup:
       "/projects/agentia-preview.jpg",
+    imagePosition: "center"
   },
   {
     name: "Odino",
@@ -84,6 +86,7 @@ export const projects: Project[] = [
     mockup:
       "/projects/odino-preview.jpg",
     website: "https://odino.vercel.app",
+    imagePosition: "center",
   },
   {
     name: "Personal Portfolio Website",
@@ -114,5 +117,6 @@ export const projects: Project[] = [
     mockup:
       "/projects/old-portfolio-preview.jpg",
     website: "https://fvasturzo.netlify.app",
+    imagePosition: "center"
   },
 ];
