@@ -111,14 +111,15 @@ export default function Header() {
                 </motion.a>
               ))}
 
-              <motion.button
+              <motion.a
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
+                href="mailto:f.vasturzo@live.it?subject=Let's Talk"
                 className="self-start px-8 py-4 bg-[#C9A86C] rounded-full text-sm tracking-[0.15em] uppercase font-medium"
               >
                 Let's talk
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}
