@@ -71,7 +71,7 @@ export const pageConfig: {
     heroScrollHint: "Scroll to discover",
 
     hero: {
-      eyebrow: "Product Design • Interfaces • Delivery",
+      eyebrow: "Product-Driven Software Development",
       title: {
         line1: "I turn ideas into",
         line2: "digital products that",
