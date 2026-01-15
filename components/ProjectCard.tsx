@@ -50,7 +50,7 @@ export default function ProjectCard({
       }}
       className="
         group relative cursor-pointer
-        border-t border-[#1A1A1A]
+        border-[#1A1A1A]
         pt-8 pb-12
         focus:outline-none
         bg-transparent
