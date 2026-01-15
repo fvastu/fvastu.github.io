@@ -42,7 +42,7 @@ export default function Header() {
           {/* Logo */}
           <a
             href="/"
-            className="text-xl font-light tracking-tight hover:text-[#C9A86C] transition-colors duration-300"
+            className="text-xl font-light tracking-tight hover:text-[#C9A86C] transition-colors duration-300 text-[#C9A86C]"
             aria-label="Home"
           >
             Portfolio
@@ -64,7 +64,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <a
             href="mailto:f.vasturzo@live.it?subject=Let's Talk"
-            className="hidden md:block px-6 py-3 border border-[#2A2A2A] rounded-full text-xs tracking-[0.15em] uppercase hover:border-[#C9A86C] hover:text-[#C9A86C] transition-all duration-300"
+            className="hidden md:block px-6 py-3 border border-[#2A2A2A] rounded-full text-xs tracking-[0.15em] uppercase hover:border-[#C9A86C] hover:text-[#C9A86C] transition-all duration-300 text-[#C9A86C]"
             aria-label="Contact me via email"
           >
             Let's talk
@@ -115,7 +115,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="self-start px-8 py-4 bg-[#C9A86C] rounded-full text-sm tracking-[0.15em] uppercase font-medium text-[#0A0A0A]"
+                className="self-start px-8 py-4 bg-[#C9A86C] rounded-full text-sm tracking-[0.15em] uppercase font-medium text-[#C9A86C]"
               >
                 Let's talk
               </motion.button>
