@@ -36,11 +36,10 @@ export default function WorkSection({ onProjectClick }: WorkSectionProps) {
         </motion.div>
 
         <div className="space-y-8" role="list">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <ProjectCard
               key={project.name}
               project={project}
-              index={index}
               onClick={() => onProjectClick(project)}
             />
           ))}
