@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
+    "start:clean": "next build && pnpm run start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "export": "next build && next export",
