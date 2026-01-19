@@ -53,8 +53,7 @@ export default function ProjectCard({
         border-[#1A1A1A]
         pt-8 pb-12
         focus:outline-none
-        bg-transparent
-      "
+        bg-transparent"
       role="listitem"
       tabIndex={0}
       aria-label={`${project.name} project details`}
