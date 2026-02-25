@@ -2,34 +2,6 @@ import { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    name: "Global Work Innovation Reports",
-    description:
-      "A platform that captures and analyzes how organizations build trustworthy innovation programs, transforming qualitative insights into structured intelligence.",
-    tech: "Next.js, Supabase, Brevo",
-    outcome: "Verified partner signals for innovation leaders",
-    problem:
-      "Innovation teams struggled with unreliable partner signals and subjective inputs that couldn't drive strategic decisions. Traditional reporting was static and disconnected from actionable intelligence.",
-    solution:
-      "Built a platform to validate partner identity, guide users through structured assessments, and generate dynamic reports with actionable insights.",
-    techStack: [
-      "Next.js 16",
-      "TypeScript",
-      "Supabase",
-      "Tailwind CSS",
-      "Radix UI",
-      "Brevo",
-      "PostgreSQL",
-    ],
-    metrics: [
-      "Domain-verified partner authentication",
-      "Structured assessment framework",
-      "Dynamic reporting dashboards",
-    ],
-    mockup:
-      "/projects/global-work-innovation-preview.jpg",
-    imagePosition: "top"
-  },
-  {
     name: "AgentIA",
     description:
       "A multilingual AI-powered agent marketplace platform with intelligent semantic search and seamless shopping experience.",
@@ -56,9 +28,35 @@ export const projects: Project[] = [
       "Full i18n support (EN/IT)",
       "Comprehensive test coverage",
     ],
-    mockup:
-      "/projects/agentia-preview.jpg",
-    imagePosition: "center"
+    mockup: "/projects/agentia-preview.jpg",
+    imagePosition: "center",
+  },
+  {
+    name: "Global Work Innovation Reports",
+    description:
+      "A platform that captures and analyzes how organizations build trustworthy innovation programs, transforming qualitative insights into structured intelligence.",
+    tech: "Next.js, Supabase, Brevo",
+    outcome: "Verified partner signals for innovation leaders",
+    problem:
+      "Innovation teams struggled with unreliable partner signals and subjective inputs that couldn't drive strategic decisions. Traditional reporting was static and disconnected from actionable intelligence.",
+    solution:
+      "Built a platform to validate partner identity, guide users through structured assessments, and generate dynamic reports with actionable insights.",
+    techStack: [
+      "Next.js 16",
+      "TypeScript",
+      "Supabase",
+      "Tailwind CSS",
+      "Radix UI",
+      "Brevo",
+      "PostgreSQL",
+    ],
+    metrics: [
+      "Domain-verified partner authentication",
+      "Structured assessment framework",
+      "Dynamic reporting dashboards",
+    ],
+    mockup: "/projects/global-work-innovation-preview.jpg",
+    imagePosition: "top",
   },
   {
     name: "Odino",
@@ -83,10 +81,41 @@ export const projects: Project[] = [
       "Full SEO & metadata implementation",
       "Production-ready with security headers",
     ],
-    mockup:
-      "/projects/odino-preview.jpg",
+    mockup: "/projects/odino-preview.jpg",
     website: "https://odino.vercel.app",
     imagePosition: "center",
+  },
+  {
+    name: "Base44 Downloader",
+    description:
+      "A Chrome extension that automates exporting Base44 projects into clean JSON or ZIP files, eliminating manual copy-paste and enabling reliable handoffs.",
+    tech: "Chrome Extension API, React, TypeScript",
+    outcome: "One-click automated project export",
+    problem:
+      "Developers using Base44 struggled to export their projects efficiently. The process required manually opening each file, copying content, and risking missing nested files, leading to inconsistent workflows and time loss.",
+    solution:
+      "Built a privacy-first Chrome extension that automatically discovers the project structure, extracts file contents, and generates structured JSON or ZIP exports with optional import cleaning for local development.",
+    techStack: [
+      "Chrome Extension API (Manifest V3)",
+      "Vanilla JavaScript",
+      "React 18",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "Framer Motion",
+      "JSZip",
+      "Vite",
+      "Vercel",
+      "i18n",
+    ],
+    metrics: [
+      "One-click full project export",
+      "Smart import cleaning for local dev",
+      "Full internationalization (54 languages)",
+    ],
+    mockup: "/projects/base44-downloader-preview.jpg",
+    website: "https://base44downloader.vercel.app",
+    imagePosition: "top",
   },
   {
     name: "Personal Portfolio Website",
@@ -114,9 +143,8 @@ export const projects: Project[] = [
       "Dark/Light theme support",
       "SEO optimized with sitemap/RSS",
     ],
-    mockup:
-      "/projects/old-portfolio-preview.jpg",
+    mockup: "/projects/old-portfolio-preview.jpg",
     website: "https://fvasturzo.netlify.app",
-    imagePosition: "center"
+    imagePosition: "center",
   },
 ];
