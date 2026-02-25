@@ -115,7 +115,7 @@ export const projects: Project[] = [
     ],
     mockup: "/projects/base44-downloader-preview.jpg",
     website: "https://base44downloader.vercel.app",
-    imagePosition: "top",
+    imagePosition: "center",
   },
   {
     name: "Personal Portfolio Website",
