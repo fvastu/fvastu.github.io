@@ -118,6 +118,33 @@ export const projects: Project[] = [
     imagePosition: "center",
   },
   {
+    name: "ExtensionShots",
+    description:
+      "A Chrome Web Store screenshot generator that turns raw extension screenshots into store-ready visuals with templates, backgrounds, and export-ready formats.",
+    tech: "Next.js, React, TypeScript",
+    outcome: "Store-ready visuals in under 60 seconds",
+    problem:
+      "Chrome extension developers struggled with creating polished Web Store listing images. Raw screenshots looked unfinished, key benefits were lost without visual hierarchy, and rebuilding exports for each required format wasted time on every launch.",
+    solution:
+      "Built a browser-based editor where developers upload a screenshot, pick a template and background, customize text and framing, and export all Chrome Web Store sizes as PNG or ZIP in one click — no Photoshop or account needed.",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
+    ],
+    metrics: [
+      "3 Chrome Web Store export sizes",
+      "10+ templates, 26+ backgrounds",
+      "Export in under 60 seconds",
+    ],
+    mockup: "/projects/extensionshots-preview.png",
+    website: "https://extensionshots.vercel.app",
+    imagePosition: "center",
+  },
+  {
     name: "Personal Portfolio Website",
     description:
       "A modern, responsive personal portfolio website featuring animated components, work showcase, and content management through Sanity CMS.",
