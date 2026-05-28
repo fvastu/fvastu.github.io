@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "./header";
 import Footer from "./footer";
@@ -100,6 +101,12 @@ export default function RootLayout({
         <link rel="canonical" href={siteConfig.url} />
         <meta name="format-detection" content="telephone=no" />
         <NoScriptStyles />
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="e606ab75-2d6a-4f7c-9756-f6e50a565afe"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -145,6 +145,69 @@ export const projects: Project[] = [
     imagePosition: "center",
   },
   {
+    name: "Fantasip Mondiale",
+    description:
+      "A full-stack fantasy soccer platform for international tournaments, featuring real-time scoring, drag-and-drop formation building, transfer markets, and an admin panel for league management.",
+    tech: "React, Supabase, Vite, Hono",
+    outcome: "Complete fantasy league management system",
+    problem:
+      "Running fantasy soccer leagues for international tournaments required manual spreadsheets, error-prone score calculations, and disconnected communication channels. There was no dedicated platform for the FANTASIP/MUNDIALSIP ruleset.",
+    solution:
+      "Built a full-stack platform with automated scoring engine, interactive formation builder with drag-and-drop, real-time transfer market, admin dashboard for league ops, and a Telegram bot for notifications.",
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Supabase",
+      "Hono",
+      "TanStack React Query",
+      "Framer Motion",
+      "Three.js",
+      "Storybook",
+      "Zod",
+      "Telegram Bot",
+    ],
+    metrics: [
+      "Automated FANTASIP scoring engine",
+      "Real-time formation builder with drag-and-drop",
+      "Telegram bot integration for notifications",
+    ],
+    mockup: "/projects/fantasipmondiale-preview.jpg",
+    website: "https://www.legafantasip.it",
+    imagePosition: "top",
+  },
+  {
+    name: "TrmSport Blog",
+    description:
+      "A modern sports blog platform powered by Sanity CMS and Next.js, featuring a modular page builder, live football standings, newsletter system, and server-side rendering for optimal SEO.",
+    tech: "Next.js, Sanity CMS, Tailwind CSS",
+    outcome: "High-performance sports content platform",
+    problem:
+      "Sports content creators needed a fast, SEO-optimized blog that could display live standings, manage rich multimedia content, and scale without heavy infrastructure — all while being easy to edit without developer involvement.",
+    solution:
+      "Deployed a SanityPress-based platform with embedded Sanity Studio for visual editing, modular page builder, live football standings via API, RSS feed generation, and OG image generation for social sharing.",
+    techStack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Sanity CMS",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Zustand",
+      "Upstash Redis",
+      "Vercel",
+    ],
+    metrics: [
+      "Modular page builder with 10+ blocks",
+      "Live football standings integration",
+      "Auto-generated OG images & RSS feed",
+    ],
+    mockup: "/projects/mariotramoblog-preview.jpg",
+    website: "https://www.trmsport.it",
+    imagePosition: "top",
+  },
+  {
     name: "Personal Portfolio Website",
     description:
       "A modern, responsive personal portfolio website featuring animated components, work showcase, and content management through Sanity CMS.",
