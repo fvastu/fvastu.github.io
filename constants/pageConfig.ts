@@ -66,7 +66,7 @@ export const pageConfig: {
 
   // Centralized UI defaults
   defaultHeroVariant: "premium",
-  backgroundTexture: "grain",
+  backgroundTexture: "ambient",
   loaderTransitionType: "slide",
 
   // Centralized UI strings
