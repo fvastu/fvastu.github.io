@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp } from "@/constants/animations";
 import Section from "./Section";
+import { siteConfig } from "@/constants/siteConfig";
+
+const contactHref = `mailto:${siteConfig.author.email}?subject=${encodeURIComponent(
+  "Project inquiry"
+)}`;
 
 export default function ContactSection() {
   return (
@@ -33,7 +38,7 @@ export default function ContactSection() {
 
         <motion.div variants={fadeInUp} className="mt-12">
           <a
-            href="mailto:f.vasturzo@live.it?subject=Project Inquiry"
+            href={contactHref}
             className="group relative inline-block px-10 py-5 bg-[#C9A86C] rounded-full overflow-hidden transition-all duration-500 hover:bg-[#D4B87A]"
             aria-label="Contact Francesco Vasturzo via email"
           >

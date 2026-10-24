@@ -36,7 +36,11 @@ export default function Hero3D({
 
         <ThrowBounceMorphItem scrollRef={scrollRef} variant={variant} />
 
-        <Environment preset="city" environmentIntensity={0.24} />
+        {/* Self-hosted "city" preset: the drei CDN is a single point of failure that crashes the page */}
+        <Environment
+          files="/hdri/potsdamer_platz_1k.hdr"
+          environmentIntensity={0.24}
+        />
 
         {/* Report loading completion to the app */}
         <LoadReporter />

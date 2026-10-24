@@ -5,14 +5,21 @@ import { useRef } from "react";
 import { Project } from "@/constants/types";
 import { fadeInUp } from "@/constants/animations";
 
+type PreviewPoint = { x: number; y: number };
+
 interface ProjectCardProps {
   project: Project;
   onClick: () => void;
+  /** `point` is set for keyboard focus, where there is no cursor to follow. */
+  onPreviewStart: (point?: PreviewPoint) => void;
+  onPreviewEnd: () => void;
 }
 
 export default function ProjectCard({
   project,
   onClick,
+  onPreviewStart,
+  onPreviewEnd,
 }: ProjectCardProps) {
   const ref = useRef(null);
 
@@ -42,6 +49,16 @@ export default function ProjectCard({
       ref={ref}
       variants={fadeInUp}
       onClick={onClick}
+      onPointerEnter={(e) => {
+        if (e.pointerType === "mouse") onPreviewStart();
+      }}
+      onPointerLeave={onPreviewEnd}
+      onFocus={(e) => {
+        if (!e.currentTarget.matches(":focus-visible")) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        onPreviewStart({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+      }}
+      onBlur={onPreviewEnd}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -107,6 +124,32 @@ export default function ProjectCard({
           <p className="mt-4 text-xs text-[#555] tracking-wider">
             {project.tech}
           </p>
+
+          {project.stats && (
+            <dl className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
+              {project.stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col-reverse">
+                  <dt className="mt-1 text-[11px] tracking-[0.15em] uppercase text-[#666]">
+                    {stat.label}
+                  </dt>
+                  <dd className="text-2xl font-light text-[#C9A86C]">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
+
+          {/* Touch devices have no hover: show the screenshot inline instead */}
+          <img
+            src={project.mockup}
+            alt={project.mockupAlt}
+            loading="lazy"
+            decoding="async"
+            className={`mt-6 aspect-[16/10] w-full rounded-xl border border-[#1A1A1A] object-cover pointer-fine:hidden ${
+              project.imagePosition === "top" ? "object-top" : ""
+            }`}
+          />
         </div>
       </div>
 

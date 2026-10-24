@@ -2,99 +2,15 @@ import { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    name: "AgentIA",
-    description:
-      "A multilingual AI-powered agent marketplace platform with intelligent semantic search and seamless shopping experience.",
-    tech: "Next.js, ML Embeddings, i18n",
-    outcome: "Intelligent agent discovery platform",
-    problem:
-      "Finding the right AI agent from hundreds of options was overwhelming and time-consuming. Users needed intelligent search that understood intent, not just keywords, while supporting multiple languages and regions.",
-    solution:
-      "Developed a marketplace with ML-powered semantic search, full i18n, and a smart shopping cart for easy agent discovery.",
-    techStack: [
-      "Next.js 16",
-      "TypeScript",
-      "Tailwind CSS",
-      "Radix UI",
-      "@xenova/transformers",
-      "next-intl",
-      "Framer Motion",
-      "React Hook Form",
-      "Zod",
-      "Vitest",
-    ],
-    metrics: [
-      "ML-powered semantic search",
-      "Full i18n support (EN/IT)",
-      "Comprehensive test coverage",
-    ],
-    mockup: "/projects/agentia-preview.jpg",
-    imagePosition: "center",
-  },
-  {
-    name: "Global Work Innovation Reports",
-    description:
-      "A platform that captures and analyzes how organizations build trustworthy innovation programs, transforming qualitative insights into structured intelligence.",
-    tech: "Next.js, Supabase, Brevo",
-    outcome: "Verified partner signals for innovation leaders",
-    problem:
-      "Innovation teams struggled with unreliable partner signals and subjective inputs that couldn't drive strategic decisions. Traditional reporting was static and disconnected from actionable intelligence.",
-    solution:
-      "Built a platform to validate partner identity, guide users through structured assessments, and generate dynamic reports with actionable insights.",
-    techStack: [
-      "Next.js 16",
-      "TypeScript",
-      "Supabase",
-      "Tailwind CSS",
-      "Radix UI",
-      "Brevo",
-      "PostgreSQL",
-    ],
-    metrics: [
-      "Domain-verified partner authentication",
-      "Structured assessment framework",
-      "Dynamic reporting dashboards",
-    ],
-    mockup: "/projects/global-work-innovation-preview.jpg",
-    imagePosition: "top",
-  },
-  {
-    name: "Odino",
-    description:
-      "A privacy-focused Chrome extension with a production-ready landing page that blocks trackers and verifies protection in real-time.",
-    tech: "Chrome Extension API, Next.js, React",
-    outcome: "Complete privacy protection solution",
-    problem:
-      "Users lacked real-time visibility into trackers and had no way to verify their privacy protection was working. Existing solutions were either too technical or didn't provide transparent feedback on what was being blocked.",
-    solution:
-      "Created a Chrome extension for real-time tracker blocking and a modern landing page with full SEO and security features.",
-    techStack: [
-      "Chrome Extension API",
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS 4",
-      "Framer Motion",
-    ],
-    metrics: [
-      "Real-time tracker blocking",
-      "Full SEO & metadata implementation",
-      "Production-ready with security headers",
-    ],
-    mockup: "/projects/odino-preview.jpg",
-    website: "https://odino.vercel.app",
-    imagePosition: "center",
-  },
-  {
     name: "Base44 Downloader",
     description:
-      "A Chrome extension that automates exporting Base44 projects into clean JSON or ZIP files, eliminating manual copy-paste and enabling reliable handoffs.",
-    tech: "Chrome Extension API, React, TypeScript",
-    outcome: "One-click automated project export",
+      "A Featured Chrome extension, rated 4.8★ on the Chrome Web Store, that exports Base44 projects to clean JSON or ZIP in one click. Shipped with its own landing site, used by more than 10,000 people.",
+    tech: "Chrome Extension (Manifest V3), React, TypeScript",
+    outcome: "10,000+ users, Featured on the Chrome Web Store",
     problem:
       "Developers using Base44 struggled to export their projects efficiently. The process required manually opening each file, copying content, and risking missing nested files, leading to inconsistent workflows and time loss.",
     solution:
-      "Built a privacy-first Chrome extension that automatically discovers the project structure, extracts file contents, and generates structured JSON or ZIP exports with optional import cleaning for local development.",
+      "Built a privacy-first Chrome extension that automatically discovers the project structure, extracts file contents, and generates structured JSON or ZIP exports with optional import cleaning for local development — plus a localized landing site that drives installs and migration requests.",
     techStack: [
       "Chrome Extension API (Manifest V3)",
       "Vanilla JavaScript",
@@ -109,40 +25,59 @@ export const projects: Project[] = [
       "i18n",
     ],
     metrics: [
-      "One-click full project export",
-      "Smart import cleaning for local dev",
-      "Full internationalization (54 languages)",
+      "10,000+ users across extension and website",
+      "4.8★ average rating on the Chrome Web Store",
+      "Featured badge on the Chrome Web Store",
     ],
-    mockup: "/projects/base44-downloader-preview.jpg",
+    stats: [
+      { value: "10,000+", label: "users" },
+      { value: "4.8★", label: "Chrome Web Store" },
+      { value: "Featured", label: "by Google" },
+    ],
+    mockup: "/projects/base44-downloader-preview.webp",
+    mockupAlt:
+      "Base44 Downloader landing page: export Base44 projects with one click",
     website: "https://base44downloader.vercel.app",
-    imagePosition: "center",
+    secondaryLink: {
+      label: "Chrome Web Store",
+      href: "https://chromewebstore.google.com/detail/base44-downloader/ngbhbpaflbegfjgaibhldjlmmfonpief",
+    },
+    imagePosition: "top",
   },
   {
-    name: "ExtensionShots",
+    name: "Fantacalcio Champions",
     description:
-      "A Chrome Web Store screenshot generator that turns raw extension screenshots into store-ready visuals with templates, backgrounds, and export-ready formats.",
-    tech: "Next.js, React, TypeScript",
-    outcome: "Store-ready visuals in under 60 seconds",
+      "A fantasy football (fantacalcio) platform for the UEFA Champions League: classic rules on the 36-club player list, live market, formations, standings and a three-phase tournament with playoffs.",
+    tech: "React, Vite, Supabase, Three.js",
+    outcome: "Production fantasy league for the Champions League",
     problem:
-      "Chrome extension developers struggled with creating polished Web Store listing images. Raw screenshots looked unfinished, key benefits were lost without visual hierarchy, and rebuilding exports for each required format wasted time on every launch.",
+      "Running a paid, limited-entry Champions League fantasy league meant juggling spreadsheets, manual vote imports and chat groups. Managers needed one place to sign up, build a squad, follow every matchday and get support fast.",
     solution:
-      "Built a browser-based editor where developers upload a screenshot, pick a template and background, customize text and framing, and export all Chrome Web Store sizes as PNG or ZIP in one click — no Photoshop or account needed.",
+      "Built a prerendered, SEO-first web app on a shared monorepo with Fantasip Mondiale: guided onboarding, transfer market, formation builder, live standings, a 3D customizable kit, an admin Control Room for phases and playoffs, an automated vote pipeline and a Telegram bot for reminders.",
     techStack: [
-      "Next.js",
-      "React",
+      "React 19",
       "TypeScript",
-      "Tailwind CSS",
+      "Vite (SSG prerender)",
+      "Tailwind CSS 4",
+      "Supabase",
+      "TanStack Query",
+      "Three.js",
       "Framer Motion",
-      "Vercel",
+      "Storybook",
+      "Vitest",
+      "Sentry",
+      "Telegram Bot",
     ],
     metrics: [
-      "3 Chrome Web Store export sizes",
-      "10+ templates, 26+ backgrounds",
-      "Export in under 60 seconds",
+      "36-club Champions League player list",
+      "3-phase tournament with protected playoff transitions",
+      "Automated matchday votes & scoring pipeline",
     ],
-    mockup: "/projects/extensionshots-preview.png",
-    website: "https://extensionshots.vercel.app",
-    imagePosition: "center",
+    mockup: "/projects/fantachampions-preview.webp",
+    mockupAlt:
+      "Fantacalcio Champions homepage: the classic fantasy football game for the Champions League",
+    website: "https://www.fantacalciochampions.it",
+    imagePosition: "top",
   },
   {
     name: "Fantasip Mondiale",
@@ -173,9 +108,102 @@ export const projects: Project[] = [
       "Real-time formation builder with drag-and-drop",
       "Telegram bot integration for notifications",
     ],
-    mockup: "/projects/fantasipmondiale-preview.jpg",
+    mockup: "/projects/fantasipmondiale-preview.webp",
+    mockupAlt:
+      "Fantamondiale 2026 by Lega Fantasip: World Cup fantasy football homepage",
     website: "https://www.legafantasip.it",
     imagePosition: "top",
+  },
+  {
+    name: "AgentIA",
+    description:
+      "An agentic work transformation platform: it maps how work gets done, finds where AI creates measurable value, and lets companies design, govern and measure Human + AI execution — with a multilingual agent marketplace.",
+    tech: "Next.js, ML Embeddings, i18n",
+    outcome: "Governed AI agents, from discovery to results",
+    problem:
+      "Finding the right AI agent from hundreds of options was overwhelming and time-consuming. Users needed intelligent search that understood intent, not just keywords, while supporting multiple languages and regions.",
+    solution:
+      "Developed a marketplace with ML-powered semantic search, full i18n, and a smart shopping cart for easy agent discovery.",
+    techStack: [
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "@xenova/transformers",
+      "next-intl",
+      "Framer Motion",
+      "React Hook Form",
+      "Zod",
+      "Vitest",
+    ],
+    metrics: [
+      "ML-powered semantic search",
+      "Full i18n support (EN/IT)",
+      "Comprehensive test coverage",
+    ],
+    mockup: "/projects/agentia-preview.webp",
+    mockupAlt:
+      "AgentIA homepage: discover processes, keep control, get results, with the organization dashboard",
+    website: "https://www.agentia.work",
+    imagePosition: "top",
+  },
+  {
+    name: "ExtensionShots",
+    description:
+      "A Chrome Web Store screenshot generator that turns raw extension screenshots into store-ready visuals with templates, backgrounds, and export-ready formats.",
+    tech: "Next.js, React, TypeScript",
+    outcome: "Store-ready visuals in under 60 seconds",
+    problem:
+      "Chrome extension developers struggled with creating polished Web Store listing images. Raw screenshots looked unfinished, key benefits were lost without visual hierarchy, and rebuilding exports for each required format wasted time on every launch.",
+    solution:
+      "Built a browser-based editor where developers upload a screenshot, pick a template and background, customize text and framing, and export all Chrome Web Store sizes as PNG or ZIP in one click — no Photoshop or account needed.",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
+    ],
+    metrics: [
+      "3 Chrome Web Store export sizes",
+      "10+ templates, 26+ backgrounds",
+      "Export in under 60 seconds",
+    ],
+    mockup: "/projects/extensionshots-preview.webp",
+    mockupAlt:
+      "ExtensionShots editor generating Chrome Web Store screenshots",
+    website: "https://extensionshots.vercel.app",
+    imagePosition: "center",
+  },
+  {
+    name: "Odino",
+    description:
+      "A privacy-focused Chrome extension with a production-ready landing page that blocks trackers and verifies protection in real-time.",
+    tech: "Chrome Extension API, Next.js, React",
+    outcome: "Complete privacy protection solution",
+    problem:
+      "Users lacked real-time visibility into trackers and had no way to verify their privacy protection was working. Existing solutions were either too technical or didn't provide transparent feedback on what was being blocked.",
+    solution:
+      "Created a Chrome extension for real-time tracker blocking and a modern landing page with full SEO and security features.",
+    techStack: [
+      "Chrome Extension API",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Framer Motion",
+    ],
+    metrics: [
+      "Real-time tracker blocking",
+      "Full SEO & metadata implementation",
+      "Production-ready with security headers",
+    ],
+    mockup: "/projects/odino-preview.jpg",
+    mockupAlt:
+      "Odino privacy Chrome extension landing page",
+    website: "https://odino.vercel.app",
+    imagePosition: "center",
   },
   {
     name: "TrmSport Blog",
@@ -203,8 +231,39 @@ export const projects: Project[] = [
       "Live football standings integration",
       "Auto-generated OG images & RSS feed",
     ],
-    mockup: "/projects/mariotramoblog-preview.jpg",
-    website: "https://www.trmsport.it",
+    mockup: "/projects/trmsport-preview.webp",
+    mockupAlt:
+      "TrmSport homepage with football, tennis news and live Serie A standings",
+    website: "https://www.trmsport.com",
+    imagePosition: "top",
+  },
+  {
+    name: "Global Work Innovation Reports",
+    description:
+      "A platform that captures and analyzes how organizations build trustworthy innovation programs, transforming qualitative insights into structured intelligence.",
+    tech: "Next.js, Supabase, Brevo",
+    outcome: "Verified partner signals for innovation leaders",
+    problem:
+      "Innovation teams struggled with unreliable partner signals and subjective inputs that couldn't drive strategic decisions. Traditional reporting was static and disconnected from actionable intelligence.",
+    solution:
+      "Built a platform to validate partner identity, guide users through structured assessments, and generate dynamic reports with actionable insights.",
+    techStack: [
+      "Next.js 16",
+      "TypeScript",
+      "Supabase",
+      "Tailwind CSS",
+      "Radix UI",
+      "Brevo",
+      "PostgreSQL",
+    ],
+    metrics: [
+      "Domain-verified partner authentication",
+      "Structured assessment framework",
+      "Dynamic reporting dashboards",
+    ],
+    mockup: "/projects/global-work-innovation-preview.jpg",
+    mockupAlt:
+      "Global Work Innovation Reports platform dashboard",
     imagePosition: "top",
   },
   {
@@ -234,6 +293,8 @@ export const projects: Project[] = [
       "SEO optimized with sitemap/RSS",
     ],
     mockup: "/projects/old-portfolio-preview.jpg",
+    mockupAlt:
+      "Previous personal portfolio website built with Sanity CMS",
     website: "https://fvasturzo.netlify.app",
     imagePosition: "center",
   },

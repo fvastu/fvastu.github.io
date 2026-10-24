@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { siteConfig } from "@/constants/siteConfig";
 
 export default function Footer() {
@@ -15,14 +15,6 @@ export default function Footer() {
     social: [
       { label: "LinkedIn", href: siteConfig.social.linkedin, icon: Linkedin },
       { label: "GitHub", href: siteConfig.social.github, icon: Github },
-      {
-        label: "Twitter",
-        href: `https://twitter.com/${siteConfig.social.twitter.replace(
-          "@",
-          ""
-        )}`,
-        icon: Twitter,
-      },
     ],
   };
 

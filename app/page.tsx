@@ -7,6 +7,7 @@ import { generateStructuredData } from "@/constants/structuredData";
 import { pageConfig } from "@/constants/pageConfig";
 import ClientPageWrapper from "@/components/ClientPageWrapper";
 import ExperienceSection4 from "@/components/ExperienceSection4";
+import BackgroundTexture from "@/components/BackgroundTexture";
 
 export default function Index() {
   const structuredData = generateStructuredData();
@@ -19,6 +20,7 @@ export default function Index() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className={pageConfig.wrapperClass}>
+        <BackgroundTexture variant={pageConfig.backgroundTexture} />
         {pageConfig.sections.hero && <AgencyHeroMorphLoopDragOneComponent />}
         <ClientPageWrapper />
         {pageConfig.sections.approach && <ApproachSection />}

@@ -6,6 +6,8 @@ export type PageSections = {
   contact: boolean;
 };
 
+export type BackgroundTextureVariant = "grain" | "dots" | "ambient";
+
 export type HeroVariant = "premium" | "glass" | "chrome" | "stone" | "aurora";
 
 export type TransitionType =
@@ -45,12 +47,13 @@ export const pageConfig: {
   wrapperClass: string;
   sections: PageSections;
   defaultHeroVariant: HeroVariant;
+  backgroundTexture: BackgroundTextureVariant;
   loaderTransitionType: TransitionType;
   strings: PageStrings;
 } = {
   // Centralized page wrapper styling
   wrapperClass:
-    "bg-[#0A0A0A] text-[#F5F5F0] min-h-screen overflow-x-hidden font-sans antialiased",
+    "relative isolate bg-[#0A0A0A] text-[#F5F5F0] min-h-screen overflow-x-hidden font-sans antialiased",
 
   // Toggle sections visibility from one place
   sections: {
@@ -63,6 +66,7 @@ export const pageConfig: {
 
   // Centralized UI defaults
   defaultHeroVariant: "premium",
+  backgroundTexture: "grain",
   loaderTransitionType: "slide",
 
   // Centralized UI strings

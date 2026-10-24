@@ -3,6 +3,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { siteConfig } from "@/constants/siteConfig";
+
+const contactHref = `mailto:${siteConfig.author.email}?subject=${encodeURIComponent(
+  "Let's talk"
+)}`;
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +68,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <a
-            href="mailto:f.vasturzo@live.it?subject=Let's Talk"
+            href={contactHref}
             className="hidden md:block px-6 py-3 border border-[#2A2A2A] rounded-full text-xs tracking-[0.15em] uppercase hover:border-[#C9A86C] hover:text-[#C9A86C] transition-all duration-300 text-[#C9A86C]"
             aria-label="Contact me via email"
           >
@@ -115,7 +120,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                href="mailto:f.vasturzo@live.it?subject=Let's Talk"
+                href={contactHref}
                 className="self-start px-8 py-4 bg-[#C9A86C] rounded-full text-sm tracking-[0.15em] uppercase font-medium"
               >
                 Let's talk

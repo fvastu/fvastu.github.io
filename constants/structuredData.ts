@@ -61,6 +61,8 @@ export function generateStructuredData() {
             "@type": "CreativeWork",
             name: project.name,
             description: project.description,
+            image: `${siteConfig.url}${project.mockup}`,
+            ...(project.website && { url: project.website }),
             creator: {
               "@id": `${siteConfig.url}/#person`,
             },

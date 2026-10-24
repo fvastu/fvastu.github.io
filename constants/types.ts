@@ -1,3 +1,13 @@
+export type ProjectStat = {
+  value: string;
+  label: string;
+};
+
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
+
 export type Project = {
   name: string;
   description: string;
@@ -9,8 +19,12 @@ export type Project = {
   testimonial?: { quote: string; author: string; role: string };
   metrics: string[];
   mockup: string;
+  mockupAlt: string;
   website?: string;
+  secondaryLink?: ProjectLink;
   imagePosition?: "top" | "center";
+  /** Headline numbers shown on the card, for projects with real traction. */
+  stats?: ProjectStat[];
 };
 
 export type ProcessStep = {
