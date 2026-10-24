@@ -4,8 +4,8 @@ export const siteConfig = {
   description:
     "Product engineer and designer building digital products people use: Base44 Downloader (10,000+ users, Featured Chrome extension rated 4.8/5), Fantacalcio Champions and more. React, TypeScript, Next.js, Chrome extensions.",
   url: "https://fvastu.github.io",
-  // Generated at build time by app/opengraph-image.tsx
-  ogImage: "https://fvastu.github.io/opengraph-image",
+  // Generated at build time by app/og-image.png/route.tsx
+  ogImage: "https://fvastu.github.io/og-image.png",
   keywords: [
     "Francesco Vasturzo",
     "Product Engineer",

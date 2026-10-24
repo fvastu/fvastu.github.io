@@ -1,12 +1,13 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/constants/siteConfig";
 
-export const alt = siteConfig.title;
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+// A route (not the opengraph-image file convention) so the static export writes
+// `og-image.png` with an extension: GitHub Pages then serves it as image/png.
 export const dynamic = "force-static";
 
-export default async function OpengraphImage() {
+const size = { width: 1200, height: 630 };
+
+export function GET() {
   return new ImageResponse(
     (
       <div
